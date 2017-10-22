@@ -23,11 +23,12 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '' => 'category/index',
-                'category' => 'category/index',
-                'category/index' => 'category/index',
-                'site' => 'category/index',
-                'site/index' => 'category/index',
+//                '' => 'site/index',
+//                '' => 'category/index',
+//                'category' => 'category/index',
+//                'category/index' => 'category/index',
+//                'site' => 'category/index',
+//                'site/index' => 'category/index',
                 'category/create-element' => 'category/create-element',
                 'category/update-element/<id:\d+>' => 'category/update-element',
                 'category/delete-element/<id:\d+>' => 'category/delete-element',
@@ -65,7 +66,7 @@ $config = [
     'params' => $params,
 ];
 
-if (YII_ENV_DEV) {
+if (YII_ENV_DEV && false) {
     // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [

@@ -41,6 +41,86 @@ class SiteController extends BaseController
         ];
     }
 
+    /** Регистрация для входа в систему */
+    public function actionIndex()
+    {
+        return $this->render('index');
+    }
+
+    /** Главный Редактор */
+    public function actionDictator()
+    {
+        return $this->render('dictator');
+    }
+
+
+    /** Правила для копирайтеров */
+    public function actionCopInstructions()
+    {
+        return $this->render('cop_instructions');
+    }
+
+    /** Статьи для копирайтеров */
+    public function actionCopArticles()
+    {
+        return $this->render('cop_articles');
+    }
+
+    /** Новости для копирайтеров */
+    public function actionCopNews()
+    {
+        return $this->render('cop_news');
+    }
+
+    /** Комментарии для копирайтеров */
+    public function actionCopComments()
+    {
+        return $this->render('cop_comments');
+    }
+
+    /** Профиль копирайтера */
+    public function actionCopProfile()
+    {
+        return $this->render('cop_profile');
+    }
+
+    /** Текущие работы  копирайтера*/
+    public function actionCopWorks()
+    {
+        return $this->render('cop_works');
+    }
+
+    /** Получить задание для копирайтера */
+    public function actionCopGetWork()
+    {
+        return $this->render('cop_get_work');
+    }
+
+    /**Новое задание для копирайтера*/
+    public function actionCopNewWork()
+    {
+        return $this->render('cop_new_work');
+    }
+
+    /** В работе для копирайтера*/
+    public function actionCopInWork()
+    {
+        return $this->render('cop_in_work');
+    }
+
+    /** Получить задание для копирайтера */
+    public function actionCopOutWork()
+    {
+        return $this->render('cop_out_work');
+    }
+
+    /** К оплате для копирайтера */
+    public function actionCopPay()
+    {
+        return $this->render('cop_pay');
+    }
+
+
     /**
      * Login action.
      *
