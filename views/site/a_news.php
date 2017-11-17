@@ -11,8 +11,8 @@
 
 <?= \app\components\TransitionWidget::widget([
     'pageName' => 'Новости',
-    'button1' => ['НОВОСТИ', '/site/cop-news'],
-    'button2' => ['КОММЕНТАРИИ РЕДАКТОРА', '/site/cop-comments'],
+    'button1' => ['НОВОСТИ', '/site/a-news'],
+    'button2' => ['КОММЕНТАРИИ РЕДАКТОРА', '/site/a-comments'],
     'button3' => ['ТЕКУЩИЕ ЗАДАНИЯ', '/site/cop-works'],
     'button4' => ['ПОЛУЧИТЬ ЗАДАНИЕ', '/site/cop-get-work'],
 ]) ?>

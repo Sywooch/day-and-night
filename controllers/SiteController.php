@@ -48,34 +48,34 @@ class SiteController extends BaseController
     }
 
     /** Главный Редактор */
-    public function actionDictator()
+    public function actionARed()
     {
-        return $this->render('dictator');
+        return $this->render('a_red');
     }
 
 
     /** Правила для копирайтеров */
-    public function actionCopInstructions()
+    public function actionAInstructions()
     {
-        return $this->render('cop_instructions');
+        return $this->render('a_instructions');
     }
 
     /** Статьи для копирайтеров */
-    public function actionCopArticles()
+    public function actionAArticles()
     {
-        return $this->render('cop_articles');
+        return $this->render('a_articles');
     }
 
     /** Новости для копирайтеров */
-    public function actionCopNews()
+    public function actionANews()
     {
-        return $this->render('cop_news');
+        return $this->render('a_news');
     }
 
     /** Комментарии для копирайтеров */
-    public function actionCopComments()
+    public function actionAComments()
     {
-        return $this->render('cop_comments');
+        return $this->render('a_comments');
     }
 
     /** Профиль копирайтера */

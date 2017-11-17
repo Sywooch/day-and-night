@@ -19,7 +19,7 @@ use yii\helpers\Html;
     </div>
     <div class="col-xs-2">
         <div class="instructions">
-            <?= Html::a('" Правила "', '/site/cop-instructions', [
+            <?= Html::a('" Правила "', '/site/a-instructions', [
                 'class' => 'btn btn-info active btn-xs btn-block',
                 'role' => 'button',
             ])?>
@@ -27,7 +27,7 @@ use yii\helpers\Html;
     </div>
     <div class="col-xs-2">
         <div class="profile">
-            <?= Html::a('" Профиль "', '/site/cop-profile', [
+            <?= Html::a('" Профиль "', '/site/a-profile', [
                 'class' => 'btn btn-info active btn-xs btn-block',
                 'role' => 'button',
             ])?>

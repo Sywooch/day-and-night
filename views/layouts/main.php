@@ -230,7 +230,7 @@ AppAsset::register($this);
 <footer class="footer">
     <div class="line"></div>
     <p class="pull-center">
-        <?= Html::a('" Читать статьи "', '/site/cop-articles', [
+        <?= Html::a('" Читать статьи "', '/site/a-articles', [
             'class' => 'btn btn-link active btn-xs pull-left',
             'role' => 'button',
         ])?>

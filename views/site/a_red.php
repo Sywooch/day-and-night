@@ -73,9 +73,9 @@
 
 <?= \app\components\TransitionWidget::widget([
     'pageName' => 'Пользователи',
-    'button1' => ['НОВОСТИ', '/site/cop-news'],
-    'button2' => ['Оставить Комментарий', '/site/cop-comments'],
-    'button3' => ['Пользователи', '/site/dictator'],
+    'button1' => ['НОВОСТИ', '/site/a-news'],
+    'button2' => ['Оставить Комментарий', '/site/a-comments'],
+    'button3' => ['Пользователи', '/site/a-red'],
     'button4' => ['Добавить "Новая Статья"', '/site/cop-new-work'],
 ]) ?>
 
