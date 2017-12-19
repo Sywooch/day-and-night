@@ -11,15 +11,19 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    'modules' => [
+        'rbac' => [
+            'class' => 'yii2mod\rbac\Module',
+        ],
+    ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '2U-Y-Ytj-j6yq4_x1DAwd8VSfF8YUejW',
         ],
-        'cache' => [
-            'class' => 'yii\caching\FileCache',
-        ],
+
         'urlManager' => [
+//
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
@@ -42,6 +46,16 @@ $config = [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
         ],
+
+        'authManager'  => [
+            'class' => 'yii\rbac\DbManager',
+            'cache' => 'cache',
+            'defaultRoles' => ['guest', 'user'],
+        ],
+        'cache' => [
+            'class' => 'yii\caching\FileCache',
+        ],
+
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],

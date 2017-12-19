@@ -5,35 +5,68 @@
  * Date: 18.09.2017
  * Time: 12:38
  */
+/* @var $model app\models\LoginForm */
+
+use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
+
 ?>
 
+<style>
+
+
+
+</style>
+
+
 <header class="page-header">
+    <?php $form = ActiveForm::begin([
+        //'id' => 'login-form',
+        'layout' => 'inline',
+        'method' => 'POST',
+        'action' => "/site/login",
+        'fieldConfig' => [
+            'template' => "{input}{error}",
+            //'labelOptions' => ['class' => 'col-lg-1 control-label'],
+        ],
+    ]); ?>
     <div class="row">
         <div class="col-xs-6">
             <div class="slog">
                 <h5>Wick Flame - Постоянная и надежная работа для копирайтеров</h5>
             </div>
         </div>
+
         <div class="col-xs-6">
             <div class="login_box">
-                <form action="/index.php?r=user/login" method="POST">
-                    <!--<input type="text" placeholder="Логин" class="ef">-->
-                    <input class="ef" placeholder="e-mail" type="text" value="" name="email" id="email" />
-                    <!--<input type="password" placeholder="Пароль" class="ef">-->
-                    <input class="ef" placeholder="пароль" type="password" value="" name="password" id="password" />
-                    <input type="submit" value="ВОЙТИ" />
-                    <div class="clear"></div>
-                    <div class="some">
-                        <label class="chek" for="rememberMe">Запомнить меня</label>
-                        <input type="checkbox" value="1" name="rememberMe" id="rememberMe" />
-                        <a href="#">Забыли пароль</a>
-                    </div>
-                </form>
+                <?= $form->field($model, 'email')
+                    ->textInput([
+                        //'autofocus' => true,
+                        'placeholder' => 'e-mail',
+                        'class' => 'ef'
+                    ])
+                ?>
+                <?= $form->field($model, 'password')
+                    ->passwordInput([
+                        'placeholder' => 'пароль',
+                        'class' => 'ef',
+                    ])
+                ?>
+                <?= \yii\bootstrap\Html::submitButton('ВОЙТИ', ['name' => 'login-button',]) ?>
+                <div class="clear"></div>
+                <div class="some">
+                    <?= $form->field($model, 'rememberMe')->checkbox([
+                        'template' => " {label} {input}  <a href=\"#\">Забыли пароль</a>",
+                    ]) ?>
+                </div>
             </div>
         </div>
     </div>
+
+    <?php ActiveForm::end(); ?>
 </header><!-- .header-->
 
 <div class="line"></div>
+
 
 

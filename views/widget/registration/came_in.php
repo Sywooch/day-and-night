@@ -35,7 +35,12 @@ use yii\helpers\Html;
     </div>
     <div class="col-xs-2">
         <div class="exit">
-            <a href="#" class="btn active btn-xs btn-block" role="button">ВЫХОД</a>
+            <?= Html::beginForm(['/site/logout'], 'post') ?>
+            <?= Html::submitButton(
+                'ВЫХОД',
+                ['class' => 'btn active btn-xs btn-block']
+            ) ?>
+            <?= Html::endForm() ?>
         </div>
     </div>
 </header><!-- .page-header -->

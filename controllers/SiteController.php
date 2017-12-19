@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use app\models\SignupForm;
+use app\models\User;
 use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
@@ -184,5 +186,33 @@ class SiteController extends BaseController
     public function actionCreateItem()
     {
 
+    }
+
+    public function actionSignup()
+    {
+        $model = new SignupForm();
+
+        if ($model->load(Yii::$app->request->post())) {
+            if ($user = $model->signup()) {
+                if (Yii::$app->getUser()->login($user)) {
+                    return $this->goHome();
+                }
+            }
+        }
+
+        return $this->render('signup', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionAdmin()
+    {
+        return $this->render('admin', [
+            'users' => User::find()
+                ->where(new \yii\db\Expression("username != 'admin'", []))
+                ->limit(5)
+                ->asArray()
+                ->all()
+        ]);
     }
 }
