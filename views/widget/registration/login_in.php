@@ -21,15 +21,27 @@ use yii\bootstrap\ActiveForm;
 
 <header class="page-header">
     <?php $form = ActiveForm::begin([
-        //'id' => 'login-form',
+        'id' => 'login-form',
         'layout' => 'inline',
         'method' => 'POST',
         'action' => "/site/login",
+//        'enableAjaxValidation' => true,
+//        'enableClientValidation' => true,
+//        'validationUrl' => \yii\helpers\Url::to(['create-user-admin']),
         'fieldConfig' => [
             'template' => "{input}{error}",
             //'labelOptions' => ['class' => 'col-lg-1 control-label'],
         ],
     ]); ?>
+
+<!--    --><?php //$form = ActiveForm::begin([
+//        'id' => 'login-form',
+//        'layout' => 'inline',horizontal
+//        'fieldConfig' => [
+//            'template' => "{label}\n<div class=\"col-lg-3\">{input}</div>\n<div class=\"col-lg-8\">{error}</div>",
+//            'labelOptions' => ['class' => 'col-lg-1 control-label'],
+//        ],
+//    ]); ?>
     <div class="row">
         <div class="col-xs-6">
             <div class="slog">
@@ -41,7 +53,7 @@ use yii\bootstrap\ActiveForm;
             <div class="login_box">
                 <?= $form->field($model, 'email')
                     ->textInput([
-                        //'autofocus' => true,
+                        'autofocus' => true,
                         'placeholder' => 'e-mail',
                         'class' => 'ef'
                     ])

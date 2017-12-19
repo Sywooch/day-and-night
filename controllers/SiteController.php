@@ -46,7 +46,9 @@ class SiteController extends BaseController
     /** Регистрация для входа в систему */
     public function actionIndex()
     {
-        return $this->render('index');
+        return $this->render('index', [
+            'model' => new SignupForm(),
+        ]);
     }
 
     /** Главный Редактор */
@@ -135,12 +137,14 @@ class SiteController extends BaseController
         }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->login()) {
             return $this->goBack();
         }
-        return $this->render('login', [
-            'model' => $model,
-        ]);
+
+        return $this->goBack();
+//        return $this->render('index', [
+//            'model' => $model,
+//        ]);
     }
 
     /**

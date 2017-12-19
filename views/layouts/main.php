@@ -146,14 +146,14 @@ AppAsset::register($this);
         margin: auto;
     }
 
-    .register_form input {
+    .register_form button {
         border: 1px solid #cccccc;
         border-radius: 2px;
         padding: 5px 0 0 0;
         width: 100%;
     }
 
-    .register_form input[type=submit] {
+    .register_form button[type=submit] {
         background: #0bb4eb;
         border: 5px solid #0bb4eb;
         font-size: 9pt;

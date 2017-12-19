@@ -14,6 +14,8 @@ class SignupForm extends Model
     public $username;
     public $email;
     public $password;
+    public $skype;
+    public $confirmPassword;
 
     /**
      * @inheritdoc
@@ -32,7 +34,20 @@ class SignupForm extends Model
             ['email', 'unique', 'targetClass' => '\app\models\User', 'message' => 'This email address has already been taken.'],
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
+            ['confirmPassword', 'required'],
+            ['confirmPassword', 'string', 'min' => 6],
+            ['confirmPassword', 'custom_function_validation_confirm_password', 'message' => 'Пароль не совподает!'],
+            ['skype', 'required'],
+            ['skype', 'string', 'min' => 2, 'max' => 20],
         ];
+    }
+
+    public function custom_function_validation_confirm_password($attribute, $params)
+    {
+        if($this->password != $this->confirmPassword){
+            $this->addError($attribute, 'Custom Validation Error - Пароль не совподает!');
+            return false;
+        }
     }
 
     /**
@@ -53,5 +68,16 @@ class SignupForm extends Model
         $user->setPassword($this->password);
         $user->generateAuthKey();
         return $user->save() ? $user : null;
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'username' => 'Имя*',
+            'email' => 'E-mail*',
+            'skype' => 'Skype*',
+            'password' => 'Придумайте пароль*',
+            'confirmPassword' => 'Повторите пароль*',
+        ];
     }
 }
