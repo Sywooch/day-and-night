@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Manual;
 use app\models\SignupForm;
 use app\models\User;
 use Yii;
@@ -57,11 +58,15 @@ class SiteController extends BaseController
         return $this->render('a_red');
     }
 
-
     /** Правила для копирайтеров */
-    public function actionAInstructions()
+    public function actionAInstructions($id = null)
     {
-        return $this->render('a_instructions');
+        $instructions = Manual::find()->all();
+
+        return $this->render('a_instructions', [
+            'current' => $id ? $instructions[$id] : $instructions[0],
+            'instructions' => $instructions,
+        ]);
     }
 
     /** Статьи для копирайтеров */

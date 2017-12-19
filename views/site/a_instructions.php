@@ -1,16 +1,35 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Admin
- * Date: 16.09.2017
- * Time: 15:52
+ * @var $instructions array
+ * @var $instruction \app\models\Manual
+ * @var $current \app\models\Manual
  */
+
+use \yii\bootstrap\Html;
+use \app\components\StatisticsWidget;
+use \app\components\TransitionWidget;
+
 ?>
 
+<style>
+    .a_edit{
+        color: rgba(255, 0, 0, 0.51);
+        font-weight: 600;
+        font-size: 15px;
+    }
+    .a_edit:hover {
+        -webkit-animation: swing 0.6s ease;
+        animation: swing 0.6s ease;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        color: rgba(255, 0, 0, 0.95);
+        text-decoration: none;
+    }
+</style>
 
-<?= \app\components\StatisticsWidget::widget() ?>
+<?= StatisticsWidget::widget() ?>
 
-<?= \app\components\TransitionWidget::widget([
+<?= TransitionWidget::widget([
     'pageName' => 'Правила',
     'button1' => ['НОВОСТИ', '/site/a-news'],
     'button2' => ['КОММЕНТАРИИ РЕДАКТОРА', '/site/a-comments'],
@@ -18,39 +37,36 @@
     'button4' => ['ПОЛУЧИТЬ ЗАДАНИЕ', '/site/cop-get-work'],
 ]) ?>
 
+<?php if(\Yii::$app->user->can('admin')): ?>
+    <?= Html::a('ред./new', '/manual', [
+        'class' => 'a_edit',
+    ]) ?>
+<?php endif; ?>
 
 <div class="content-rules">
     <div class="row">
+        <div class="col-xs-8">
+            <?= $current->text ?>
+        </div>
+
         <h5>Приветствуем Вас и желаем удачи в освоении новой профессии!</h5>
         <p>Прочитайте  правила работы, изучите обозначение терминов и примените их на практике.
             Если не получится с первого раза – не переживайте, всему можно обучиться.<br>
             Работа в Wick Flame – идеально подходит начинающим копирайтерам. Требования, которые Вы видите в методичке – минимальны.<br>
             Если их освоите, то Вы приобретете необходимый опыт и отличный старт для дальнейшего развития в сфере копирайтинга.<br>
             Быстрая обратная связь позволит автору моментально получить ответ на интересующий вопрос.<br>
-            Не стесняйся задавать вопросы в чате или на почту : Wick-flame@mail.ru</p>
-        <div class="col-xs-8">
-            <h5>Основные условия</h5>
-            <p><b>Правила</b> – здесь находится основная информация по написанию текстов, которая пригодится в работе.</p>
-            <p><b>Мой профиль</b> – изменение контактов, указанных при регистрации и выбор тем для статей.</p>
-            <p><b>Текущие задания</b> – все задания: новые, в работе или на доработке.</p>
-            <p><b>Получить задание</b> – подача заявки на следующий день происходит до 18.00 текущего.</p>
-            <p>Увидеть полезные советы по усовершенствованию текста можно во вкладке <b>«Комментарии редактора».</b></p>
-            <p><b>Время на выполнение – 24 часа.</b></p>
-            <p><b>Проверка</b> осуществляется в два этапа:</p>
-            <p>- быстрая (24 часа) – проверка на выполнение требований ТЗ;</p>
-            <p>- прием и доработка глав. редактором (3 дня), который решает, принимать ли статью или дорабатывать ее самостоятельно.</p>
-            <p><b>На доработку</b> статья может прийти, если есть явные нарушения по требованиям в ТЗ или много «воды».
-                На доработку у Вас есть 24 часа.</p>
-            <p><b>Оплата</b> 15 р. / 1000 зн. б. п. на Вебмани (WMR) производится по факту приема первых 2 статей редактором,
-                а далее – раз в неделю (пт или сб).</p>
-        </div>
+            Не стесняйся задавать вопросы в чате или на почту : Wick-flame@mail.ru
+        </p>
+
         <div class="col-xs-1"></div>
         <div class="col-xs-2">
-            <a href="#" class="btn btn-warning active btn-xs btn-block" role="button">ОСНОВНЫЕ УСЛОВИЯ</a><br />
-            <a href="#" class="btn btn-warning active btn-xs btn-block" role="button">НАЧАЛО РАБОТЫ</a><br />
-            <a href="#" class="btn btn-warning active btn-xs btn-block" role="button">ТЕРМИНЫ</a><br />
-            <a href="#" class="btn btn-warning active btn-xs btn-block" role="button">СЕРВИСЫ</a><br />
-            <a href="#" class="btn btn-warning active btn-xs btn-block" role="button">ФИНАНСЫ</a>
+            <?php foreach ($instructions as $id => $instruction): ?>
+                <?= Html::a($instruction->name, "/site/a-instructions/$id", [
+                    'class' => 'btn btn-warning active btn-xs btn-block',
+                    'role' => 'button',
+                ]) ?>
+                <br />
+            <?php endforeach; ?>
         </div>
         <div class="col-xs-1"></div>
     </div>

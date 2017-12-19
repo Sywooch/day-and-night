@@ -33,6 +33,8 @@ $config = [
 //                'category/index' => 'category/index',
 //                'site' => 'category/index',
 //                'site/index' => 'category/index',
+                'site/a-instructions/<id:\d+>' => 'site/a-instructions',
+
                 'category/create-element' => 'category/create-element',
                 'category/update-element/<id:\d+>' => 'category/update-element',
                 'category/delete-element/<id:\d+>' => 'category/delete-element',
@@ -80,7 +82,7 @@ $config = [
     'params' => $params,
 ];
 
-if (YII_ENV_DEV && false) {
+if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
