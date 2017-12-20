@@ -1,12 +1,9 @@
 <?php
 
-/**
- * @var $categories array
- * @var $this yii\web\View
- * @var $val \app\models\MenuItems
- * @var $model \app\models\MenuItemsForm
- */
+/* @var $model app\models\LoginForm */
 
+use yii\bootstrap\Html;
+use yii\bootstrap\ActiveForm;
 use \app\components\CategoryViewWidget;
 
 $this->title = 'Главная';
@@ -28,7 +25,9 @@ $this->title = 'Главная';
             <p>" Зарабатывайте дома по личному графику. Удаленно и Стабильно. "</p>
         </div>
         <div class="col-xs-6">
-            <p>" Пройдите регистрацию, возьмите тему и напишите статью. "</p>
+            <?php if (Yii::$app->user->isGuest): ?>
+                <p>" Пройдите регистрацию, возьмите тему и напишите статью. "</p>
+            <?php endif; ?>
         </div>
     </div>
 </div><!-- .citations -->
@@ -52,37 +51,57 @@ $this->title = 'Главная';
             </div>
         </div>
         <div class="col-xs-6">
-            <div class="content-main">
-                <div class="content-register">
-                    <div class="register">
-                        <a name="register"></a>
-                        <div class="title"><h5>Регистрация :</h5></div>
-                        <form action="/index.php?r=user/registering#register" method="POST">
-                            <div class="register_form">
-                                <label>Имя*</label>
-                                <input type="text" name="username" id="username" />
-                                <span class="error"></span>
-                                <label>E-mail*</label>
-                                <input type="text" name="email" id="email" />
-                                <span class="error"></span>
-                                <label>Skype*</label>
-                                <input type="text" name="skype" id="skype" />
-                                <span class="error"></span>
-                                <label>Кошелёк WMR*</label>
-                                <input type="text" name="purse" id="purse" />
-                                <span class="error"></span>
-                                <label>Придумайте пароль*</label>
-                                <input type="password" value="" name="password" id="password" />
-                                <span class="error"></span>
-                                <label>Повторите пароль*</label>
-                                <input type="password" value="" name="confirmPassword" id="confirmPassword" />
-                                <input type="hidden" name="ref" value="" />
-                                <input type="submit" name="yt0" value="Зарегистрироваться" />
-                            </div>
-                        </form>
+            <?php if (Yii::$app->user->isGuest): ?>
+                <div class="content-main">
+                    <div class="content-register">
+                        <div class="register">
+                            <a name="register"></a>
+                            <div class="title"><h5>Регистрация :</h5></div>
+
+                            <?php $form = ActiveForm::begin([
+                                'id' => 'form-signup',
+                                //'layout' => 'horizontal',
+                                'method' => 'POST',
+                                'action' => "/site",
+                                'fieldConfig' => [
+                                    'template' => "{label}{input}{error}",
+                                    //'labelOptions' => ['class' => 'col-lg-1 control-label'],
+                                ],
+                            ]); ?>
+
+                                <div class="register_form">
+
+                                    <?= $form->field($model, 'username')->textInput([
+                                            'autofocus' => true,
+                                            'style' => 'height: 25px;',
+                                    ]) ?>
+
+                                    <?= $form->field($model, 'email')->input('email', [
+                                        'style' => 'height: 25px;',
+                                    ]) ?>
+
+                                    <?= $form->field($model, 'skype')->textInput([
+                                        'style' => 'height: 25px;',
+                                    ]) ?>
+
+                                    <?= $form->field($model, 'password')->passwordInput([
+                                        'style' => 'height: 25px;',
+                                    ]) ?>
+
+                                    <?= $form->field($model, 'confirmPassword')->passwordInput([
+                                        'style' => 'height: 25px;',
+                                    ]) ?>
+
+                                    <?= Html::submitButton('Зарегистрироваться', []) ?>
+
+                                </div>
+
+                            <?php ActiveForm::end(); ?>
+
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php endif; ?>
         </div>
     </div>
 </div><!-- .main -->

@@ -8,9 +8,19 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'app\commands',
+    'modules' => [
+        'rbac' => [
+            'class' => 'yii2mod\rbac\ConsoleModule',
+        ]
+    ],
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
+        ],
+        'authManager'  => [
+            'class' => 'yii\rbac\DbManager',
+            'cache' => 'cache',
+            'defaultRoles' => ['guest', 'user'],
         ],
         'log' => [
             'targets' => [
@@ -22,6 +32,14 @@ $config = [
         ],
         'db' => $db,
     ],
+//    'i18n' => [
+//        'translations' => [
+//            'yii2mod.rbac' => [
+//                'class' => 'yii\i18n\PhpMessageSource',
+//                'basePath' => '@yii2mod/rbac/messages',
+//            ],
+//        ],
+//    ],
     'params' => $params,
     /*
     'controllerMap' => [

@@ -146,14 +146,14 @@ AppAsset::register($this);
         margin: auto;
     }
 
-    .register_form input {
+    .register_form button {
         border: 1px solid #cccccc;
         border-radius: 2px;
         padding: 5px 0 0 0;
         width: 100%;
     }
 
-    .register_form input[type=submit] {
+    .register_form button[type=submit] {
         background: #0bb4eb;
         border: 5px solid #0bb4eb;
         font-size: 9pt;
@@ -176,6 +176,19 @@ AppAsset::register($this);
         padding-left: 40%;
     }
 
+    .a_edit{
+        color: rgba(255, 0, 0, 0.51);
+        font-weight: 600;
+        font-size: 15px;
+    }
+    .a_edit:hover {
+        -webkit-animation: swing 0.6s ease;
+        animation: swing 0.6s ease;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        color: rgba(255, 0, 0, 0.95);
+        text-decoration: none;
+    }
 
 </style>
 

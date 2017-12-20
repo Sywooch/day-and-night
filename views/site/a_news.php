@@ -1,10 +1,32 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Admin
- * Date: 16.09.2017
- * Time: 16:55
+ * @var $items array
+ * @var $news \app\models\Manual
+ * @var $current \app\models\Manual
  */
+
+use yii\bootstrap\Html;
+
+function alert ($i){
+        $a = [
+            'success',
+            'info',
+            'warning',
+        ];
+
+        if($i > 2){
+            $i = 0;
+            $alert = $a[$i];
+        } else {
+            $alert = $a[$i];
+            $i++;
+        }
+
+        return [$i, $alert];
+}
+
+$i = 0;
+
 ?>
 
 <?= \app\components\StatisticsWidget::widget() ?>
@@ -17,32 +39,23 @@
     'button4' => ['ПОЛУЧИТЬ ЗАДАНИЕ', '/site/cop-get-work'],
 ]) ?>
 
+<?= \app\components\IsAdminWidget::widget(['url' => '/news']) ?>
 
 <div class="content-news">
     <div class="row">
         <div class="col-xs-12">
-            <div class="alert alert-success" role="alert">
-                <a href="#" class="alert-link">
-                    У нас всё хорошо. С сегодняшнего дня по вопросам,
-                    связанным с заданиями обращайтесь в Slack - elen_777.
-                </a>
-                <p>Дата публикации: 11/08</p>
-            </div>
-            <div class="alert alert-info" role="alert">
-                <a href="#" class="alert-link">
-                    Внимание! Появилась новая тема: Астрология.
-                    Все желающие получать задания на данную тематику,
-                    поставьте галочку напротив Астрологии в разделе «Мой профиль».
-                </a>
-                <p>Дата публикации: 31/08</p>
-            </div>
-            <div class="alert alert-warning" role="alert">
-                <a href="#" class="alert-link">
-                    Главн. редактора не будет в сети с 13:30 до 15:00,
-                    по всем вопросам обращайтесь на почту: Verona2015@bk.ru
-                </a>
-                <p>Дата публикации: 08/09</p>
-            </div>
+
+            <?php foreach ($items as $news): ?>
+                <?php $alert = alert($i); $i = $alert[0];?>
+                <div class="alert alert-<?= $alert[1] ?>" role="alert">
+                    <a href="#" class="alert-link">
+                        <?= $news->text ?>
+                    </a>
+                    <p>Дата публикации: <?= (new DateTime($news->date_publication))->format('d/m') ?></p>
+                </div>
+
+            <?php endforeach; ?>
+
         </div>
     </div>
 </div><!-- .content-news -->

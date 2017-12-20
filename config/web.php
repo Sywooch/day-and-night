@@ -11,15 +11,19 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    'modules' => [
+        'rbac' => [
+            'class' => 'yii2mod\rbac\Module',
+        ],
+    ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '2U-Y-Ytj-j6yq4_x1DAwd8VSfF8YUejW',
         ],
-        'cache' => [
-            'class' => 'yii\caching\FileCache',
-        ],
+
         'urlManager' => [
+//
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
@@ -29,6 +33,8 @@ $config = [
 //                'category/index' => 'category/index',
 //                'site' => 'category/index',
 //                'site/index' => 'category/index',
+                'site/a-instructions/<id:\d+>' => 'site/a-instructions',
+
                 'category/create-element' => 'category/create-element',
                 'category/update-element/<id:\d+>' => 'category/update-element',
                 'category/delete-element/<id:\d+>' => 'category/delete-element',
@@ -42,6 +48,16 @@ $config = [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
         ],
+
+        'authManager'  => [
+            'class' => 'yii\rbac\DbManager',
+            'cache' => 'cache',
+            'defaultRoles' => ['guest', 'user'],
+        ],
+        'cache' => [
+            'class' => 'yii\caching\FileCache',
+        ],
+
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
@@ -66,7 +82,7 @@ $config = [
     'params' => $params,
 ];
 
-if (YII_ENV_DEV && false) {
+if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
