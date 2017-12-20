@@ -21,11 +21,7 @@ use \app\components\TransitionWidget;
     'button4' => ['ПОЛУЧИТЬ ЗАДАНИЕ', '/site/cop-get-work'],
 ]) ?>
 
-<?php if(\Yii::$app->user->can('admin')): ?>
-    <?= Html::a('ред./new', '/manual', [
-        'class' => 'a_edit',
-    ]) ?>
-<?php endif; ?>
+<?= \app\components\IsAdminWidget::widget(['url' => '/manual']) ?>
 
 <div class="content-rules">
     <div class="row">

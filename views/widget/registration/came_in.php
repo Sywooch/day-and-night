@@ -27,7 +27,7 @@ use yii\helpers\Html;
     </div>
     <div class="col-xs-2">
         <div class="profile">
-            <?= Html::a('" Профиль "', '/site/a-profile', [
+            <?= Html::a('" Профиль "', '/site/cop-profile', [
                 'class' => 'btn btn-info active btn-xs btn-block',
                 'role' => 'button',
             ])?>

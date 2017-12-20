@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\models\Manual;
 use app\models\News;
 use app\models\SignupForm;
+use app\models\Topics;
 use app\models\User;
 use Yii;
 use yii\filters\AccessControl;
@@ -91,7 +92,9 @@ class SiteController extends BaseController
     /** Профиль копирайтера */
     public function actionCopProfile()
     {
-        return $this->render('cop_profile');
+        return $this->render('cop_profile', [
+            'topics' => Topics::find()->where($this->holders('status=1'))->all(),
+        ]);
     }
 
     /** Текущие работы  копирайтера*/
@@ -224,5 +227,10 @@ class SiteController extends BaseController
                 ->asArray()
                 ->all()
         ]);
+    }
+
+    private function holders($name, $params = [])
+    {
+        return new \yii\db\Expression($name, $params);
     }
 }

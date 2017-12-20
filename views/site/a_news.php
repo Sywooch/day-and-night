@@ -39,11 +39,7 @@ $i = 0;
     'button4' => ['ПОЛУЧИТЬ ЗАДАНИЕ', '/site/cop-get-work'],
 ]) ?>
 
-<?php if(\Yii::$app->user->can('admin')): ?>
-    <?= Html::a('ред./new', '/news', [
-        'class' => 'a_edit',
-    ]) ?>
-<?php endif; ?>
+<?= \app\components\IsAdminWidget::widget(['url' => '/news']) ?>
 
 <div class="content-news">
     <div class="row">

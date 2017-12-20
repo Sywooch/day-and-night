@@ -74,24 +74,31 @@ class AdminController extends Controller
 
     public function actionAuth()
     {
+        d(['hjhjhj']);
         $auth = Yii::$app->authManager;
-
-        $manageManual = $auth->createPermission('manageManual');
-        $manageManual->description = 'Manage a Manual';
-        $auth->add($manageManual);
-
-        $viewManual = $auth->createPermission('viewManual');
-        $viewManual->description = 'View a Manual';
-        $auth->add($viewManual);
-
-        $deleteManual = $auth->createPermission('deleteManual');
-        $deleteManual->description = 'Delete a Manual';
-        $auth->add($deleteManual);
-
         $admin = $auth->getRole('admin');
 
-        $auth->addChild($admin, $manageManual);
-        $auth->addChild($admin, $viewManual);
-        $auth->addChild($admin, $deleteManual);
+        function ggggg(yii\rbac\DbManager &$auth, yii\rbac\Role $admin, $name, $mass){
+            $manage = $auth->createPermission($name);
+            $manage->description = $mass;
+            $auth->add($manage);
+            $auth->addChild($admin, $manage);
+        }
+
+        ggggg($auth, $admin, 'manageTopics', 'Менеджер тем');
+        ggggg($auth, $admin, 'viewTopics', 'Обзор тем');
+        ggggg($auth, $admin, 'createTopics', 'Создание темы');
+        ggggg($auth, $admin, 'updateTopics', 'Обновление темы');
+        ggggg($auth, $admin, 'deleteTopics', 'Удаление темы');
+
+        ggggg($auth, $admin, 'manageTopicsUse', 'Менеджер тематических связей');
+        ggggg($auth, $admin, 'viewTopicsUse', 'Обзор тематических связей');
+        ggggg($auth, $admin, 'createTopicsUse', 'Создание тематических связей');
+        ggggg($auth, $admin, 'updateTopicsUse', 'Обновление тематических связей');
+        ggggg($auth, $admin, 'deleteTopicsUse', 'Удаление тематических связей');
+
+
+
+
     }
 }

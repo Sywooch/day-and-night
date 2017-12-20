@@ -3,17 +3,17 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\News;
-use app\models\NewsSearch;
+use app\models\Topics;
+use app\models\TopicsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii2mod\rbac\filters\AccessControl;
 
 /**
- * NewsController implements the CRUD actions for News model.
+ * TopicsController implements the CRUD actions for Topics model.
  */
-class NewsController extends Controller
+class TopicsController extends Controller
 {
     /**
      * @inheritdoc
@@ -33,27 +33,27 @@ class NewsController extends Controller
                     [
                         'allow' => true,
                         'actions' => ['index'],
-                        'roles' => ['manageNews'],
+                        'roles' => ['manageTopics'],
                     ],
                     [
                         'allow' => true,
                         'actions' => ['view'],
-                        'roles' => ['viewNews'],
+                        'roles' => ['viewTopics'],
                     ],
                     [
                         'allow' => true,
                         'actions' => ['create'],
-                        'roles' => ['createNews'],
+                        'roles' => ['createTopics'],
                     ],
                     [
                         'allow' => true,
                         'actions' => ['update'],
-                        'roles' => ['updateNews'],
+                        'roles' => ['updateTopics'],
                     ],
                     [
                         'allow' => true,
                         'actions' => ['delete'],
-                        'roles' => ['deleteNews'],
+                        'roles' => ['deleteTopics'],
                     ],
                 ],
             ],
@@ -61,12 +61,12 @@ class NewsController extends Controller
     }
 
     /**
-     * Lists all News models.
+     * Lists all Topics models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new NewsSearch();
+        $searchModel = new TopicsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -76,7 +76,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Displays a single News model.
+     * Displays a single Topics model.
      * @param string $id
      * @return mixed
      */
@@ -88,13 +88,13 @@ class NewsController extends Controller
     }
 
     /**
-     * Creates a new News model.
+     * Creates a new Topics model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new News();
+        $model = new Topics();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -106,7 +106,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Updates an existing News model.
+     * Updates an existing Topics model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param string $id
      * @return mixed
@@ -125,7 +125,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Deletes an existing News model.
+     * Deletes an existing Topics model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param string $id
      * @return mixed
@@ -138,15 +138,15 @@ class NewsController extends Controller
     }
 
     /**
-     * Finds the News model based on its primary key value.
+     * Finds the Topics model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param string $id
-     * @return News the loaded model
+     * @return Topics the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = News::findOne($id)) !== null) {
+        if (($model = Topics::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
