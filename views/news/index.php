@@ -19,21 +19,19 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create News', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php //d($searchModel); ?>
-
-    <?=
-
-
-
-    GridView::widget([
+    <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'id_author' => [
+            [
+                'attribute' => 'id_author',
+                'label' => 'Автор новости',
                 'value' => function ($data) {
+                    return $data->id_author;
+                },
+                'content' => function ($data) {
                     return $data->author->username;
                 },
             ],

@@ -9,6 +9,7 @@ use yii\grid\GridView;
 
 $this->title = 'Topics';
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="topics-index">
 
@@ -25,9 +26,23 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'name_topic',
-            'status',
+            [
+                'attribute' => 'status',
+                'label' => 'Статус',
+                'value' => function ($data) {
+                    return $data->id_author;
+                },
+                'content' => function ($data) {
+                    $status = ['Off', 'Ok'];
+                    $style = $data->status ? 'color: green;' : 'color: red;';
+
+                    return "<span style='font-weight: 700;$style'>" . $status[$data->status] . "</span>";
+                },
+                'contentOptions' =>function ($model, $key, $index, $column){
+                    return ['style' => 'width: 50px;text-align: center;',];
+                },
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
