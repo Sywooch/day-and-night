@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Manual;
+use app\models\News;
 use app\models\SignupForm;
 use app\models\User;
 use Yii;
@@ -78,7 +79,7 @@ class SiteController extends BaseController
     /** Новости для копирайтеров */
     public function actionANews()
     {
-        return $this->render('a_news');
+        return $this->render('a_news', ['items' => News::find()->all()]);
     }
 
     /** Комментарии для копирайтеров */

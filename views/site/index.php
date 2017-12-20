@@ -25,7 +25,9 @@ $this->title = 'Главная';
             <p>" Зарабатывайте дома по личному графику. Удаленно и Стабильно. "</p>
         </div>
         <div class="col-xs-6">
-            <p>" Пройдите регистрацию, возьмите тему и напишите статью. "</p>
+            <?php if (Yii::$app->user->isGuest): ?>
+                <p>" Пройдите регистрацию, возьмите тему и напишите статью. "</p>
+            <?php endif; ?>
         </div>
     </div>
 </div><!-- .citations -->
@@ -49,55 +51,57 @@ $this->title = 'Главная';
             </div>
         </div>
         <div class="col-xs-6">
-            <div class="content-main">
-                <div class="content-register">
-                    <div class="register">
-                        <a name="register"></a>
-                        <div class="title"><h5>Регистрация :</h5></div>
+            <?php if (Yii::$app->user->isGuest): ?>
+                <div class="content-main">
+                    <div class="content-register">
+                        <div class="register">
+                            <a name="register"></a>
+                            <div class="title"><h5>Регистрация :</h5></div>
 
-                        <?php $form = ActiveForm::begin([
-                            'id' => 'form-signup',
-                            //'layout' => 'horizontal',
-                            'method' => 'POST',
-                            'action' => "/site",
-                            'fieldConfig' => [
-                                'template' => "{label}{input}{error}",
-                                //'labelOptions' => ['class' => 'col-lg-1 control-label'],
-                            ],
-                        ]); ?>
+                            <?php $form = ActiveForm::begin([
+                                'id' => 'form-signup',
+                                //'layout' => 'horizontal',
+                                'method' => 'POST',
+                                'action' => "/site",
+                                'fieldConfig' => [
+                                    'template' => "{label}{input}{error}",
+                                    //'labelOptions' => ['class' => 'col-lg-1 control-label'],
+                                ],
+                            ]); ?>
 
-                            <div class="register_form">
+                                <div class="register_form">
 
-                                <?= $form->field($model, 'username')->textInput([
-                                        'autofocus' => true,
+                                    <?= $form->field($model, 'username')->textInput([
+                                            'autofocus' => true,
+                                            'style' => 'height: 25px;',
+                                    ]) ?>
+
+                                    <?= $form->field($model, 'email')->input('email', [
                                         'style' => 'height: 25px;',
-                                ]) ?>
+                                    ]) ?>
 
-                                <?= $form->field($model, 'email')->input('email', [
-                                    'style' => 'height: 25px;',
-                                ]) ?>
+                                    <?= $form->field($model, 'skype')->textInput([
+                                        'style' => 'height: 25px;',
+                                    ]) ?>
 
-                                <?= $form->field($model, 'skype')->textInput([
-                                    'style' => 'height: 25px;',
-                                ]) ?>
+                                    <?= $form->field($model, 'password')->passwordInput([
+                                        'style' => 'height: 25px;',
+                                    ]) ?>
 
-                                <?= $form->field($model, 'password')->passwordInput([
-                                    'style' => 'height: 25px;',
-                                ]) ?>
+                                    <?= $form->field($model, 'confirmPassword')->passwordInput([
+                                        'style' => 'height: 25px;',
+                                    ]) ?>
 
-                                <?= $form->field($model, 'confirmPassword')->passwordInput([
-                                    'style' => 'height: 25px;',
-                                ]) ?>
+                                    <?= Html::submitButton('Зарегистрироваться', []) ?>
 
-                                <?= Html::submitButton('Зарегистрироваться', []) ?>
+                                </div>
 
-                            </div>
+                            <?php ActiveForm::end(); ?>
 
-                        <?php ActiveForm::end(); ?>
-
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php endif; ?>
         </div>
     </div>
 </div><!-- .main -->

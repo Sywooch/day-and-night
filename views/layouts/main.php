@@ -176,6 +176,19 @@ AppAsset::register($this);
         padding-left: 40%;
     }
 
+    .a_edit{
+        color: rgba(255, 0, 0, 0.51);
+        font-weight: 600;
+        font-size: 15px;
+    }
+    .a_edit:hover {
+        -webkit-animation: swing 0.6s ease;
+        animation: swing 0.6s ease;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        color: rgba(255, 0, 0, 0.95);
+        text-decoration: none;
+    }
 
 </style>
 
