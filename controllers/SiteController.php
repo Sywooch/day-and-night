@@ -2,11 +2,13 @@
 
 namespace app\controllers;
 
+use app\models\jobs\UpdateUserSettingsJob;
 use app\models\Manual;
 use app\models\News;
 use app\models\SignupForm;
 use app\models\Topics;
 use app\models\User;
+use app\models\UserProfileForm;
 use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
@@ -92,7 +94,16 @@ class SiteController extends BaseController
     /** Профиль копирайтера */
     public function actionCopProfile()
     {
+        $model = new UserProfileForm();;
+
+        if ($model->load(Yii::$app->request->post())) {
+            $this->dispatch((new UpdateUserSettingsJob($model)));
+        } else {
+            $model = UserProfileForm::getUserProfileForm();
+        }
+
         return $this->render('cop_profile', [
+            'model' => $model,
             'topics' => Topics::find()->where($this->holders('status=1'))->all(),
         ]);
     }

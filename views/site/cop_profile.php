@@ -3,6 +3,7 @@
  * @var $topics array
  * @var $topic \app\models\Topics
  * @var $auth yii\rbac\DbManager
+ * @var $model \app\models\UserProfileForm
  */
 
 
@@ -10,6 +11,7 @@ use yii\bootstrap\Html;
 use \app\components\StatisticsWidget;
 use \app\components\TransitionWidget;
 use \app\components\IsAdminWidget;
+use \yii\bootstrap\ActiveForm;
 
 ?>
 
@@ -33,29 +35,26 @@ use \app\components\IsAdminWidget;
             <h5>Редактировать данные :</h5>
             <div class="register">
                 <a name="register"></a>
-                <form action="/index.php?r=user/registering#register" method="POST">
+                <?php $form = ActiveForm::begin([
+                    'id' => 'edit-form',
+                    'method' => 'POST',
+                    'action' => "/site/cop-profile",
+                    'fieldConfig' => [
+                        'template' => "{label}{input}{error}",
+                    ],
+                ]); ?>
                     <div class="register_form">
-                        <label>Имя*</label>
-                        <input type="text" name="username" id="username" />
-                        <span class="error"></span>
-                        <label>E-mail*</label>
-                        <input type="text" name="email" id="email" />
-                        <span class="error"></span>
-                        <label>Skype*</label>
-                        <input type="text" name="skype" id="skype" />
-                        <span class="error"></span>
-                        <label>Кошелёк WMR*</label>
-                        <input type="text" name="purse" id="purse" />
-                        <span class="error"></span>
-                        <label>Придумайте пароль*</label>
-                        <input type="password" value="" name="password" id="password" />
-                        <span class="error"></span>
-                        <label>Повторите пароль*</label>
-                        <input type="password" value="" name="confirmPassword" id="confirmPassword" />
-                        <input type="hidden" name="ref" value="" />
-                        <input type="submit" name="yt0" value="Сохранить" />
+                        <?= $form->field($model, 'username')->textInput() ?>
+
+                        <?= $form->field($model, 'email')->textInput() ?>
+
+                        <?= $form->field($model, 'skype')->textInput() ?>
+
+                        <?= $form->field($model, 'wmr')->textInput() ?>
+
+                        <?= Html::submitButton('Сохранить', ['name' => 'edit-form-button',]) ?>
                     </div>
-                </form>
+                <?php ActiveForm::end(); ?>
             </div>
         </div>
     </div>
