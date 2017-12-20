@@ -8,6 +8,7 @@
 
 namespace app\components;
 
+use app\models\LoginForm;
 use Yii;
 use yii\base\Widget;
 
@@ -21,9 +22,9 @@ class RegistrationWidget extends Widget
     public function run()
     {
         if (!Yii::$app->user->isGuest) {
-            return $this->render('came_in');
+            return $this->render('came_in', ['model' => new LoginForm()]);
         } else {
-            return $this->render('login_in');
+            return $this->render('login_in', ['model' => new LoginForm()]);
         }
     }
 

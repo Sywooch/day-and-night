@@ -2,6 +2,13 @@
 
 namespace app\controllers;
 
+use app\models\jobs\UpdateUserSettingsJob;
+use app\models\Manual;
+use app\models\News;
+use app\models\SignupForm;
+use app\models\Topics;
+use app\models\User;
+use app\models\UserProfileForm;
 use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
@@ -44,7 +51,9 @@ class SiteController extends BaseController
     /** Регистрация для входа в систему */
     public function actionIndex()
     {
-        return $this->render('index');
+        return $this->render('index', [
+            'model' => new SignupForm(),
+        ]);
     }
 
     /** Главный Редактор */
@@ -53,11 +62,15 @@ class SiteController extends BaseController
         return $this->render('a_red');
     }
 
-
     /** Правила для копирайтеров */
-    public function actionAInstructions()
+    public function actionAInstructions($id = null)
     {
-        return $this->render('a_instructions');
+        $instructions = Manual::find()->all();
+
+        return $this->render('a_instructions', [
+            'current' => $id ? $instructions[$id] : $instructions[0],
+            'instructions' => $instructions,
+        ]);
     }
 
     /** Статьи для копирайтеров */
@@ -69,7 +82,7 @@ class SiteController extends BaseController
     /** Новости для копирайтеров */
     public function actionANews()
     {
-        return $this->render('a_news');
+        return $this->render('a_news', ['items' => News::find()->all()]);
     }
 
     /** Комментарии для копирайтеров */
@@ -81,7 +94,18 @@ class SiteController extends BaseController
     /** Профиль копирайтера */
     public function actionCopProfile()
     {
-        return $this->render('cop_profile');
+        $model = new UserProfileForm();;
+
+        if ($model->load(Yii::$app->request->post())) {
+            $this->dispatch((new UpdateUserSettingsJob($model)));
+        } else {
+            $model = UserProfileForm::getUserProfileForm();
+        }
+
+        return $this->render('cop_profile', [
+            'model' => $model,
+            'topics' => Topics::find()->where($this->holders('status=1'))->all(),
+        ]);
     }
 
     /** Текущие работы  копирайтера*/
@@ -133,12 +157,14 @@ class SiteController extends BaseController
         }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->login()) {
             return $this->goBack();
         }
-        return $this->render('login', [
-            'model' => $model,
-        ]);
+
+        return $this->goBack();
+//        return $this->render('index', [
+//            'model' => $model,
+//        ]);
     }
 
     /**
@@ -184,5 +210,38 @@ class SiteController extends BaseController
     public function actionCreateItem()
     {
 
+    }
+
+    public function actionSignup()
+    {
+        $model = new SignupForm();
+
+        if ($model->load(Yii::$app->request->post())) {
+            if ($user = $model->signup()) {
+                if (Yii::$app->getUser()->login($user)) {
+                    return $this->goHome();
+                }
+            }
+        }
+
+        return $this->render('signup', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionAdmin()
+    {
+        return $this->render('admin', [
+            'users' => User::find()
+                ->where(new \yii\db\Expression("username != 'admin'", []))
+                ->limit(5)
+                ->asArray()
+                ->all()
+        ]);
+    }
+
+    private function holders($name, $params = [])
+    {
+        return new \yii\db\Expression($name, $params);
     }
 }
