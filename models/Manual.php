@@ -42,9 +42,9 @@ class Manual extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'text' => 'Text',
-            'date_publication' => 'Date Publication',
+            'name' => 'Название инструкции',
+            'text' => 'Текст инструкции',
+            'date_publication' => 'Дата публикации',
         ];
     }
 }
