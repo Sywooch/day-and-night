@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\TopicsUseSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Topics Uses';
+$this->title = 'Используемые темы';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="topics-use-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Topics Use', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Закрепить тему', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([

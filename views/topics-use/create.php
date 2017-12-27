@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\TopicsUse */
 
-$this->title = 'Create Topics Use';
-$this->params['breadcrumbs'][] = ['label' => 'Topics Uses', 'url' => ['index']];
+$this->title = 'Закрепить тему';
+$this->params['breadcrumbs'][] = ['label' => 'Испльзуемые темы', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="topics-use-create">
