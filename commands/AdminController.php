@@ -97,17 +97,17 @@ class AdminController extends Controller
         ggggg($auth, $admin, 'updateTopicsUse', 'Обновление тематических связей');
         ggggg($auth, $admin, 'deleteTopicsUse', 'Удаление тематических связей');
 
-        ggggg($auth, $admin, 'manageManual', 'Менеджер тематических связей');
-        ggggg($auth, $admin, 'viewTopicsUse', 'Обзор тематических связей');
-        ggggg($auth, $admin, 'createTopicsUse', 'Создание тематических связей');
-        ggggg($auth, $admin, 'updateTopicsUse', 'Обновление тематических связей');
-        ggggg($auth, $admin, 'deleteTopicsUse', 'Удаление тематических связей');
+        ggggg($auth, $admin, 'manageManual', 'Менеджер инструкций и правил');
+        ggggg($auth, $admin, 'viewManual', 'Обзор инструкций и правил');
+        ggggg($auth, $admin, 'createManual', 'Создание инструкций и правил');
+        ggggg($auth, $admin, 'updateManual', 'Обновление инструкций и правил');
+        ggggg($auth, $admin, 'deleteManual', 'Удаление инструкций и правил');
 
-        ggggg($auth, $admin, 'manageManual', 'Менеджер тематических связей');
-        ggggg($auth, $admin, 'viewTopicsUse', 'Обзор тематических связей');
-        ggggg($auth, $admin, 'createTopicsUse', 'Создание тематических связей');
-        ggggg($auth, $admin, 'updateTopicsUse', 'Обновление тематических связей');
-        ggggg($auth, $admin, 'deleteTopicsUse', 'Удаление тематических связей');
+        ggggg($auth, $admin, 'manageNews', 'Менеджер новостей и объявлений');
+        ggggg($auth, $admin, 'viewNews', 'Обзор новостей и объявлений');
+        ggggg($auth, $admin, 'createNews', 'Создание новостей и объявлений');
+        ggggg($auth, $admin, 'updateNews', 'Обновление новостей и объявлений');
+        ggggg($auth, $admin, 'deleteNews', 'Удаление новостей и объявлений');
 
 
 
