@@ -85,3 +85,10 @@
         </div>
     </div>
 </div><br><!-- .content-topic -->
+
+<script>
+    window.onload = function() {
+        //alert( 'Документ и все ресурсы загружены' );
+        
+    };
+</script>
