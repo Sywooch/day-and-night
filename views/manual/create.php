@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Manual */
 
-$this->title = 'Create Manual';
-$this->params['breadcrumbs'][] = ['label' => 'Manuals', 'url' => ['index']];
+$this->title = 'Создание инструкции';
+$this->params['breadcrumbs'][] = ['label' => 'Правила', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="manual-create">

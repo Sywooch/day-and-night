@@ -25,7 +25,7 @@ $author = Users::findOne(Yii::$app->getUser()->getId());
     <?= $form->field($model, 'date_publication')->textInput(['disabled' => 'disabled']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

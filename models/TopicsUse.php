@@ -32,7 +32,7 @@ class TopicsUse extends \yii\db\ActiveRecord
         return [
             [['id_user', 'id_topic'], 'required'],
             [['id_user', 'id_topic'], 'integer'],
-            [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => Users::className(), 'targetAttribute' => ['id_user' => 'id']],
+            [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_user' => 'id']],
             [['id_topic'], 'exist', 'skipOnError' => true, 'targetClass' => Topics::className(), 'targetAttribute' => ['id_topic' => 'id']],
         ];
     }
@@ -44,8 +44,8 @@ class TopicsUse extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'id_user' => 'Id User',
-            'id_topic' => 'Id Topic',
+            'id_user' => 'Пользователь',
+            'id_topic' => 'Тема',
         ];
     }
 

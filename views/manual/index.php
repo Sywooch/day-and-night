@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\SearchManual */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Manuals';
+$this->title = 'Правила';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="manual-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Manual', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Содать инструкцию', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([

@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\TopicsUse */
 
-$this->title = 'Update Topics Use: {nameAttribute}';
-$this->params['breadcrumbs'][] = ['label' => 'Topics Uses', 'url' => ['index']];
+$this->title = 'Обновление связи';
+$this->params['breadcrumbs'][] = ['label' => 'Используемые темы', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Обновление связи';
 ?>
 <div class="topics-use-update">
 
