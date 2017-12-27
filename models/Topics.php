@@ -43,8 +43,8 @@ class Topics extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name_topic' => 'Name Topic',
-            'status' => 'Status',
+            'name_topic' => 'Название темы',
+            'status' => 'Статус',
         ];
     }
 
