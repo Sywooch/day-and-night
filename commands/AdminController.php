@@ -97,6 +97,19 @@ class AdminController extends Controller
         ggggg($auth, $admin, 'updateTopicsUse', 'Обновление тематических связей');
         ggggg($auth, $admin, 'deleteTopicsUse', 'Удаление тематических связей');
 
+        ggggg($auth, $admin, 'manageManual', 'Менеджер тематических связей');
+        ggggg($auth, $admin, 'viewTopicsUse', 'Обзор тематических связей');
+        ggggg($auth, $admin, 'createTopicsUse', 'Создание тематических связей');
+        ggggg($auth, $admin, 'updateTopicsUse', 'Обновление тематических связей');
+        ggggg($auth, $admin, 'deleteTopicsUse', 'Удаление тематических связей');
+
+        ggggg($auth, $admin, 'manageManual', 'Менеджер тематических связей');
+        ggggg($auth, $admin, 'viewTopicsUse', 'Обзор тематических связей');
+        ggggg($auth, $admin, 'createTopicsUse', 'Создание тематических связей');
+        ggggg($auth, $admin, 'updateTopicsUse', 'Обновление тематических связей');
+        ggggg($auth, $admin, 'deleteTopicsUse', 'Удаление тематических связей');
+
+
 
 
 
