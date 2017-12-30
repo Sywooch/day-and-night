@@ -3,19 +3,16 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\TopicsUse;
-use app\models\TopicsUseSearch;
-use yii\bootstrap\Html;
-use yii\helpers\Json;
+use app\models\Mission;
+use app\models\MissionSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii2mod\rbac\filters\AccessControl;
 
 /**
- * TopicsUseController implements the CRUD actions for TopicsUse model.
+ * MissionController implements the CRUD actions for Mission model.
  */
-class TopicsUseController extends Controller
+class MissionController extends Controller
 {
     /**
      * @inheritdoc
@@ -27,54 +24,18 @@ class TopicsUseController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
-                    //'create-topics-use' => ['POST'],
-                ],
-            ],
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'allow' => true,
-                        'actions' => ['index'],
-                        'roles' => ['manageTopicsUse'],
-                    ],
-                    [
-                        'allow' => true,
-                        'actions' => ['view'],
-                        'roles' => ['viewTopicsUse'],
-                    ],
-                    [
-                        'allow' => true,
-                        'actions' => ['create'],
-                        'roles' => ['createTopicsUse'],
-                    ],
-                    [
-                        'allow' => true,
-                        'actions' => ['update'],
-                        'roles' => ['updateTopicsUse'],
-                    ],
-                    [
-                        'allow' => true,
-                        'actions' => ['delete'],
-                        'roles' => ['deleteTopicsUse'],
-                    ],
-//                    [
-//                        'allow' => true,
-//                        'actions' => ['create-topics-use'],
-//                        'roles' => ['createTopicsUse'],
-//                    ],
                 ],
             ],
         ];
     }
 
     /**
-     * Lists all TopicsUse models.
+     * Lists all Mission models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new TopicsUseSearch();
+        $searchModel = new MissionSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -84,7 +45,7 @@ class TopicsUseController extends Controller
     }
 
     /**
-     * Displays a single TopicsUse model.
+     * Displays a single Mission model.
      * @param string $id
      * @return mixed
      */
@@ -96,13 +57,13 @@ class TopicsUseController extends Controller
     }
 
     /**
-     * Creates a new TopicsUse model.
+     * Creates a new Mission model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new TopicsUse();
+        $model = new Mission();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -114,7 +75,7 @@ class TopicsUseController extends Controller
     }
 
     /**
-     * Updates an existing TopicsUse model.
+     * Updates an existing Mission model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param string $id
      * @return mixed
@@ -133,7 +94,7 @@ class TopicsUseController extends Controller
     }
 
     /**
-     * Deletes an existing TopicsUse model.
+     * Deletes an existing Mission model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param string $id
      * @return mixed
@@ -146,29 +107,18 @@ class TopicsUseController extends Controller
     }
 
     /**
-     * Finds the TopicsUse model based on its primary key value.
+     * Finds the Mission model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param string $id
-     * @return TopicsUse the loaded model
+     * @return Mission the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = TopicsUse::findOne($id)) !== null) {
+        if (($model = Mission::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
-    }
-
-    public function actionCreateTopicsUse()
-    {
-        return 'rest';
-exit;
-        if(!Yii::$app->request->isAjax){
-            return false;
-        }
-
-        return Json::encode(['jk' => $id]);
     }
 }

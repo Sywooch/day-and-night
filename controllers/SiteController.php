@@ -7,6 +7,7 @@ use app\models\Manual;
 use app\models\News;
 use app\models\SignupForm;
 use app\models\Topics;
+use app\models\TopicsUse;
 use app\models\User;
 use app\models\UserProfileForm;
 use Yii;
@@ -73,7 +74,10 @@ class SiteController extends BaseController
         ]);
     }
 
-    /** Статьи для копирайтеров */
+    /**
+     * Статьи для копирайтеров
+     * a-articles
+     */
     public function actionAArticles()
     {
         return $this->render('a_articles');
@@ -108,7 +112,10 @@ class SiteController extends BaseController
         ]);
     }
 
-    /** Текущие работы  копирайтера*/
+    /**
+     * Текущие работы  копирайтера
+     * cop-works
+     */
     public function actionCopWorks()
     {
         return $this->render('cop_works');
@@ -243,5 +250,44 @@ class SiteController extends BaseController
     private function holders($name, $params = [])
     {
         return new \yii\db\Expression($name, $params);
+    }
+
+    public function actionCreateTopicsUse()
+    {
+        if(!$id_topic = (int) Yii::$app->request->post('id_topic')){
+            //////////////////////////////////////////////////////////
+            //   error                                              //
+            //////////////////////////////////////////////////////////
+            $this->redirect('site/cop-profile');
+        }
+
+        $id_user = Yii::$app->getUser()->getId();
+
+        $topicsUse = TopicsUse::find()
+            ->where($this->holders('id_user = :id_user',
+                [
+                    'id_user' => $id_user
+                ]))
+            ->all();
+
+        if($topicsUse){
+            /** @var TopicsUse $topicUse */
+            foreach ($topicsUse as $topicUse){
+                if($id_topic == $topicUse->id_topic){
+                    //////////////////////////////////////////////////////////
+                    //   error                                              //
+                    //////////////////////////////////////////////////////////
+                    $this->redirect('site/cop-profile');
+                }
+            }
+        }
+
+        $model = new TopicsUse();
+
+        $model->id_topic = $id_topic;
+        $model->id_user = $id_user;
+        $model->save();
+
+        $this->redirect('site/cop-profile');
     }
 }

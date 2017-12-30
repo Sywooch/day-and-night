@@ -40,6 +40,7 @@ $config = [
                 'category/delete-element/<id:\d+>' => 'category/delete-element',
                 'category/create-element/<id:\d+>' => 'category/create-element',
                 'category/get-children-elements/<id:\d+>' => 'category/get-children-elements',
+
                 'category/run-my-modal/<is:\d+>' => 'category/run-my-modal',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
             ],

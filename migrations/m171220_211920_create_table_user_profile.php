@@ -22,7 +22,9 @@ class m171220_211920_create_table_user_profile extends Migration
         $this->addPrimaryKey('', 'user_profile', 'id');
         $this->createIndex('id_user', 'user_profile', 'id_user');
 
-        $this->addForeignKey('user_profile_ibfk_1', 'user_profile', 'id_user', 'users', 'id', 'NO ACTION', 'NO ACTION');
+        $this->alterColumn('user_profile', 'id', 'int(10) unsigned NOT NULL AUTO_INCREMENT');
+
+        $this->addForeignKey('user_profile_ibfk_1', 'user_profile', 'id_user', 'user', 'id', 'NO ACTION', 'NO ACTION');
     }
 
     /**
@@ -30,7 +32,7 @@ class m171220_211920_create_table_user_profile extends Migration
      */
     public function safeDown()
     {
-        $this->dropTable('articles');
+        $this->dropTable('user_profile');
     }
 
     /*

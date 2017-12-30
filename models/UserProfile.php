@@ -30,11 +30,10 @@ class UserProfile extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'id_user'], 'required'],
-            [['id', 'id_user'], 'integer'],
+            [['id_user'], 'required'],
+            [['id_user'], 'integer'],
             [['skype'], 'string', 'max' => 50],
             [['wmr'], 'string', 'max' => 40],
-            [['id'], 'unique'],
             [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => Users::className(), 'targetAttribute' => ['id_user' => 'id']],
         ];
     }
