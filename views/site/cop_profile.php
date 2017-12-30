@@ -36,7 +36,7 @@ use \yii\bootstrap\ActiveForm;
             <div class="register">
                 <a name="register"></a>
                 <?php $form = ActiveForm::begin([
-                    'id' => 'edit-form',
+                    //'id' => 'edit-form',
                     'method' => 'POST',
                     'action' => "/site/cop-profile",
                     'fieldConfig' => [
@@ -67,13 +67,50 @@ use \yii\bootstrap\ActiveForm;
         <div class="col-xs-4">
             <div class="choice">
                 <?php foreach ($topics as $topic): ?>
-                    <?= Html::a($topic->name_topic, "#", [
+
+                    <?= Html::beginForm(['/site/create-topics-use'], 'post') ?>
+                    <?= Html::hiddenInput('id_topic', $topic->id) ?>
+                    <?= Html::submitButton($topic->name_topic, [
                         'class' => 'btn btn-warning active btn-xs btn-block',
                         'role' => 'button',
                     ]) ?>
+<!--                    --><?//= Html::a(
+//                        $topic->name_topic,
+//                        [
+//                            'class' => 'btn btn-warning active btn-xs btn-block',
+//                            'role' => 'button',
+////                            'onClick' => "fTopicsUse($topic->id);",
+//                            'id' => 'ererrr',
+//                        ]
+//                    ) ?>
+                    <?= Html::endForm() ?>
                 <?php endforeach; ?>
             </div>
         </div>
         <div class="col-xs-4"></div>
     </div>
 </div><!-- .content-pro -->
+
+<script>
+//    function fTopicsUse(id_topic) {
+//        $.post("/site/createtopicsuse", function( data ) {
+//            console.log( data );
+//        });
+//
+//    window.onload = function() {
+//
+//        console.log( 'fgfgfgfgfg' );
+//        $('#gggggggggggg').on('click', function () {
+//
+//            console.log( 'fgfgfgfgfg' );
+//
+////            $.post("/site/createtopicsuse", function( data ) {
+////                console.log( data );
+////            });
+//        });
+//    };
+
+
+
+//    }
+</script>

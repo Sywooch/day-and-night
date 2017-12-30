@@ -111,7 +111,11 @@ class AdminController extends Controller
 
 
 
-
-
+        ///usr/local/php5.3/bin/php-cgi -v
+        //../../usr/local/php/php56/bin/php -v
+        //../../../../usr/local/php/php56/bin/php composer.phar install
+        //../../../../../../usr/local/php/php56/bin/php composer.phar install
+//../../../../../../usr/local/php/php56/bin % php56 -v
+//ssh-keygen -t rsa -b 4096 -C "kashtanov_as@ukr.net"
     }
 }
