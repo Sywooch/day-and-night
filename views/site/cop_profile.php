@@ -85,6 +85,8 @@ use \yii\bootstrap\ActiveForm;
 //                    ) ?>
                     <?= Html::endForm() ?>
                 <?php endforeach; ?>
+
+
             </div>
         </div>
         <div class="col-xs-4"></div>
@@ -114,3 +116,5 @@ use \yii\bootstrap\ActiveForm;
 
 //    }
 </script>
+
+
