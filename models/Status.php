@@ -29,9 +29,21 @@ class Status extends Model
         ];
     }
 
+    public function statusStyle()
+    {
+        return [
+            'btn-danger',
+            'btn-primary',
+            'btn-info',
+        ];
+    }
+
     static public function getLabel($id_status)
     {
         $status = new Status();
-        return '<div class="btn-info">' . $status->attributeLabels()[$id_status] . '</div>';
+        $label = $status->attributeLabels()[$id_status];
+        $class = $status->statusStyle()[$id_status];
+
+        return "<div class='$class'>$label</div>";
     }
 }
