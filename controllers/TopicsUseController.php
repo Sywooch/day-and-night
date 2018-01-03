@@ -5,6 +5,8 @@ namespace app\controllers;
 use Yii;
 use app\models\TopicsUse;
 use app\models\TopicsUseSearch;
+use yii\bootstrap\Html;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -25,6 +27,7 @@ class TopicsUseController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
+                    //'create-topics-use' => ['POST'],
                 ],
             ],
             'access' => [
@@ -55,6 +58,11 @@ class TopicsUseController extends Controller
                         'actions' => ['delete'],
                         'roles' => ['deleteTopicsUse'],
                     ],
+//                    [
+//                        'allow' => true,
+//                        'actions' => ['create-topics-use'],
+//                        'roles' => ['createTopicsUse'],
+//                    ],
                 ],
             ],
         ];
@@ -151,5 +159,16 @@ class TopicsUseController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+
+    public function actionCreateTopicsUse()
+    {
+        return 'rest';
+exit;
+        if(!Yii::$app->request->isAjax){
+            return false;
+        }
+
+        return Json::encode(['jk' => $id]);
     }
 }

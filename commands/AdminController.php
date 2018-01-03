@@ -74,17 +74,27 @@ class AdminController extends Controller
 
     public function actionAuth()
     {
-        d(['hjhjhj']);
+        $user = new User();
+        $user->username = 'userTester';
+        $user->email = 'bek@coder.com';
+        $user->setPassword('bekcoder');
+        $user->generateAuthKey();
+        if ($user->save()) {
+            echo 'good';
+        }
+
         $auth = Yii::$app->authManager;
+        $coder = $auth->createRole('coder');
         $admin = $auth->getRole('admin');
 
-        function ggggg(yii\rbac\DbManager &$auth, yii\rbac\Role $admin, $name, $mass){
+
+        function ggggg(\yii\rbac\DbManager &$auth, \yii\rbac\Role $admin, $name, $mass){
             $manage = $auth->createPermission($name);
             $manage->description = $mass;
             $auth->add($manage);
             $auth->addChild($admin, $manage);
         }
-
+        
         ggggg($auth, $admin, 'manageTopics', 'Менеджер тем');
         ggggg($auth, $admin, 'viewTopics', 'Обзор тем');
         ggggg($auth, $admin, 'createTopics', 'Создание темы');
@@ -111,7 +121,11 @@ class AdminController extends Controller
 
 
 
-
-
+        ///usr/local/php5.3/bin/php-cgi -v
+        //../../usr/local/php/php56/bin/php -v
+        //../../../../usr/local/php/php56/bin/php composer.phar install
+        //../../../../../../usr/local/php/php56/bin/php composer.phar install
+//../../../../../../usr/local/php/php56/bin % php56 -v
+//ssh-keygen -t rsa -b 4096 -C "kashtanov_as@ukr.net"
     }
 }

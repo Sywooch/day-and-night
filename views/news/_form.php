@@ -20,7 +20,7 @@ $author = Users::findOne(Yii::$app->getUser()->getId());
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'text')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'text')->textarea(['id' => 'editor1', 'rows' => 10]) ?>
 
     <?= $form->field($model, 'date_publication')->textInput(['disabled' => 'disabled']) ?>
 
@@ -31,3 +31,9 @@ $author = Users::findOne(Yii::$app->getUser()->getId());
     <?php ActiveForm::end(); ?>
 
 </div>
+
+<script type="text/javascript">
+    window.onload = function() {
+        CKEDITOR.replace( 'editor1' );
+    };
+</script>
