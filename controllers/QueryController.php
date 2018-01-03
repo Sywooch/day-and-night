@@ -103,7 +103,10 @@ class QueryController extends Controller
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        if(Yii::$app->user->returnUrl != '/')
+            return $this->goBack();
+        else return
+            Yii::$app->request->referrer ? $this->redirect(Yii::$app->request->referrer) : $this->goHome();
     }
 
     /**
