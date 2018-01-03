@@ -16,6 +16,8 @@ class Status extends Model
     const OFF = 0;
     const OK = 1;
     const ZR = 2;
+    const DONE = 3;
+    const IN_WORK = 5;
 
     /**
      * @inheritdoc
@@ -25,7 +27,10 @@ class Status extends Model
         return [
             'off',
             'ok',
-            'Заявка на рассмотрении',
+            'на рассмотрении',
+            'выполнено',
+            '',
+            'в работе',
         ];
     }
 
