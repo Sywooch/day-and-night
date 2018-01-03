@@ -20,13 +20,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'uniqueness')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'develop_theme')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'develop_theme')->textarea(['id' => 'editor_develop_theme', 'rows' => 10]) ?>
 
-    <?= $form->field($model, 'empty_words')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'empty_words')->textarea(['id' => 'editor_empty_words', 'rows' => 10]) ?>
 
-    <?= $form->field($model, 'keywords')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'keywords')->textarea(['id' => 'editor_keywords', 'rows' => 10]) ?>
 
-    <?= $form->field($model, 'comment_view')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'comment_view')->textarea(['id' => 'editor_comment_view', 'rows' => 10]) ?>
 
     <?= $form->field($model, 'status')->textInput(['maxlength' => true]) ?>
 
@@ -39,3 +39,12 @@ use yii\widgets\ActiveForm;
     <?php ActiveForm::end(); ?>
 
 </div>
+
+<script type="text/javascript">
+    window.onload = function() {
+        CKEDITOR.replace( 'editor_develop_theme' );
+        CKEDITOR.replace( 'editor_empty_words' );
+        CKEDITOR.replace( 'editor_keywords' );
+        CKEDITOR.replace( 'editor_comment_view' );
+    };
+</script>

@@ -15,13 +15,13 @@ class m171224_221702_create_table_mission extends Migration
         $this->execute("CREATE TABLE IF NOT EXISTS `mission` (
           `id` int(10) unsigned NOT NULL,
           `id_topic` int(10) unsigned NOT NULL COMMENT 'Тема',
-          `id_author` int(10) unsigned NOT NULL COMMENT 'Составитель',
+          `id_author` int(10) unsigned DEFAULT NULL COMMENT 'Составитель',
           `article_name` varchar(40) DEFAULT NULL COMMENT 'Название статьи',
           `uniqueness` varchar(40) DEFAULT NULL COMMENT 'Уникальность',
-          `develop_theme` text NOT NULL COMMENT 'Раскрыть тему',
-          `empty_words` text NOT NULL COMMENT 'Запрещены фразы',
-          `keywords` text NOT NULL COMMENT 'Ключевые слова',
-          `comment_view` datetime NOT NULL COMMENT 'Дополнительное описание',
+          `develop_theme` text DEFAULT NULL COMMENT 'Раскрыть тему',
+          `empty_words` text DEFAULT NULL COMMENT 'Запрещены фразы',
+          `keywords` text DEFAULT NULL COMMENT 'Ключевые слова',
+          `comment_view` datetime DEFAULT NULL COMMENT 'Дополнительное описание',
           `status` int(2) unsigned NOT NULL DEFAULT '3' COMMENT 'Статус',
           `date_creature` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Дата создание'
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT 'Задания';");
@@ -41,9 +41,7 @@ class m171224_221702_create_table_mission extends Migration
      */
     public function safeDown()
     {
-        echo "m171224_221702_create_table_mission cannot be reverted.\n";
-
-        return false;
+        $this->dropTable('mission');
     }
 
     /*

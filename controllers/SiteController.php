@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\models\jobs\UpdateUserSettingsJob;
 use app\models\Manual;
 use app\models\News;
+use app\models\Query;
 use app\models\SignupForm;
 use app\models\Topics;
 use app\models\TopicsUse;
@@ -124,7 +125,27 @@ class SiteController extends BaseController
     /** Получить задание для копирайтера */
     public function actionCopGetWork()
     {
-        return $this->render('cop_get_work');
+        $model = new Query();
+        $id_user = Yii::$app->getUser()->getId();
+
+        if ($model->load(Yii::$app->request->post())) {
+            $model->work_date = (new \DateTime($model->work_date))->format('Y-m-d');
+            $model->id_author = $id_user;
+            $model->status = 2;
+            $model->save();
+        }
+
+        $requests = Query::find()
+            ->where($this->holders('id_author = :id_author', [
+                'id_author' => $id_user
+            ]))->all();
+
+        //d($requests);
+
+        return $this->render('cop_get_work', [
+            'model' => $model,
+            'requests' => $requests,
+        ]);
     }
 
     /**Новое задание для копирайтера*/
