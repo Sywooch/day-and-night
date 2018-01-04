@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Mission */
 
-$this->title = 'Update Mission: {nameAttribute}';
-$this->params['breadcrumbs'][] = ['label' => 'Missions', 'url' => ['index']];
+$this->title = 'Редактирование задания';
+$this->params['breadcrumbs'][] = ['label' => 'Задания копирайтеров', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

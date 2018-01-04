@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Mission */
 
-$this->title = 'Create Mission';
-$this->params['breadcrumbs'][] = ['label' => 'Missions', 'url' => ['index']];
+$this->title = 'Создание задания';
+$this->params['breadcrumbs'][] = ['label' => 'Задания копирайтров', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="mission-create">
