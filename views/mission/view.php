@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Mission */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Задания копирайтеров', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Задания копирайтерам', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="mission-view">
