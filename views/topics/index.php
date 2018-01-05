@@ -150,56 +150,104 @@ $this->params['breadcrumbs'][] = $this->title;
     }
 </style>
 
-<a href="#" class="button15">Ok</a>
 
-<a href="#" class="button15 button15O">Off</a>
+<?php
+// <a href="#" class="button15">Ok</a>
+// <a href="#" class="button15 button15O">Off</a>
+// <br> <br> <br>
+// <a href="#" class="button17" tabindex="0">Ok</a>
+// <a href="#" class="button17 button17O" tabindex="0">Off</a>
+// <br> <br> <br>
+// <a href="#" class="button21">Ok</a>
+// <a href="#" class="button21 button21O">Off</a>
+?>
 
-<br> <br> <br>
 
-<a href="#" class="button17" tabindex="0">Ok</a>
+<div class = "col-xs-8">
+    <div class="topics-index">
 
-<a href="#" class="button17 button17O" tabindex="0">Off</a>
+        <h1><?= Html::encode($this->title) ?></h1>
+        <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-<br> <br> <br>
+        <p>
+            <?= Html::a('Создать тему', ['create'], ['class' => 'btn btn-success']) ?>
+        </p>
 
-<a href="#" class="button21">Ok</a>
+        <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            'filterModel' => $searchModel,
+            'columns' => [
+                ['class' => 'yii\grid\SerialColumn'],
 
-<a href="#" class="button21 button21O">Off</a>
+                'name_topic',
+                [
+                    'attribute' => 'status',
+                    'label' => 'Статус',
+                    'value' => function ($data) {
+                        return $data->id_author;
+                    },
+                    'content' => function ($data) {
+                        $status = ['Off', 'Ok'];
+                        $style = $data->status ? 'color: green;' : 'color: red;';
 
-<div class="topics-index">
+                        return "<span style='font-weight: 700;$style'>" . $status[$data->status] . "</span>";
+                    },
+                    'contentOptions' =>function ($model, $key, $index, $column){
+                        return ['style' => 'width: 50px;text-align: center;',];
+                    },
+                ],
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('Создать тему', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'name_topic',
-            [
-                'attribute' => 'status',
-                'label' => 'Статус',
-                'value' => function ($data) {
-                    return $data->id_author;
-                },
-                'content' => function ($data) {
-                    $status = ['Off', 'Ok'];
-                    $style = $data->status ? 'color: green;' : 'color: red;';
-
-                    return "<span style='font-weight: 700;$style'>" . $status[$data->status] . "</span>";
-                },
-                'contentOptions' =>function ($model, $key, $index, $column){
-                    return ['style' => 'width: 50px;text-align: center;',];
-                },
+                ['class' => 'yii\grid\ActionColumn'],
             ],
+        ]); ?>
+    </div>
+</div>
+<div class = "col-xs-1"></div>
+<div class = "col-xs-3">
+    <ul class="nav nav-tabs nav-stacked" style = "background: rgba(0, 999, 0, 0.333);">
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+        <li class="nav-divider"></li>
+        <li class="nav-header">Главные ссылки</li>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Обратная связь</a></li>
+        <li><a href="#">Контакты</a></li>
+        <li><a href="#">Правила</a></li>
+        <li><a href="#">Новости</a></li>
+        <li><a href="#">Обратная связь</a></li>
+        <li><a href="#">Полезная литература</a></li>
+
+        <li class="nav-divider"></li>
+        <li class="nav-header">Рабочие ссылки</li>
+        <li><a href="#">Задания</a></li>
+        <li><a href="#">Темы</a></li>
+        <li><a href="#">Статьи</a></li>
+        <li><a href="#">Редакция</a></li>
+        <li><a href="#">Календарь мероприятий</a></li>
+        <li><a href="#">Техническая библиотека</a></li>
+        <li><a href="#">Каталог работ</a></li>
+
+        <li class="nav-divider"></li>
+        <li class="nav-header">Копирайтеры</li>
+        <li><a href="#">Профили</a></li>
+        <li><a href="#">Новые задания</a></li>
+        <li><a href="#">Текущие задания</a></li>
+        <li><a href="#">Доработка</a></li>
+        <li><a href="#">Календарь работы</a></li>
+
+        <li class="nav-divider"></li>
+        <li class="nav-header">Редакторы</li>
+        <li><a href="#">Профили</a></li>
+        <li><a href="#">Новые задания</a></li>
+        <li><a href="#">Текущие задания</a></li>
+        <li><a href="#">Комментарии</a></li>
+        <li><a href="#">Проверка</a></li>
+        <li><a href="#">Календарь работы</a></li>
+
+        <li class="nav-divider"></li>
+        <li class="nav-header">Финансы</li>
+        <li><a href="#">Ставки</a></li>
+        <li><a href="#">Оплаты</a></li>
+        <li><a href="#">Платежи</a></li>
+
+    </ul>
 </div>
