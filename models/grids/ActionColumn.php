@@ -27,13 +27,13 @@ class ActionColumn extends \yii\grid\ActionColumn
             $this->buttons[$name] = function ($url, $model, $key) use ($name, $iconName, $additionalOptions) {
                 switch ($name) {
                     case 'view':
-                        $title = Yii::t('yii', 'View');
+                        $title = Yii::t('yii', 'Открыть');
                         break;
                     case 'update':
-                        $title = Yii::t('yii', 'Update');
+                        $title = Yii::t('yii', 'Редактировать');
                         break;
                     case 'delete':
-                        $title = Yii::t('yii', 'Delete');
+                        $title = Yii::t('yii', 'Удалить');
                         break;
                     default:
                         $title = ucfirst($name);
