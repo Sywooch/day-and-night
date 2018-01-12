@@ -25,11 +25,28 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'id_user',
-            'id_topic',
+            [
+                'attribute' => 'id_user',
+                'label' => 'Автор заявки',
+                'value' => function ($data) {
+                    return $data->id_user;
+                },
+                'content' => function ($data) {
+                    return $data->user->username;
+                },
+            ],
+            [
+                'attribute' => 'id_topic',
+                'label' => 'Выбранная тема',
+                'value' => function ($data) {
+                    return $data->id_topic;
+                },
+                'content' => function ($data) {
+                    return $data->topic->name_topic;
+                },
+            ],
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'app\models\grids\ActionColumn'],
         ],
     ]); ?>
 </div>

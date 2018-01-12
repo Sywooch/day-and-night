@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'text:ntext',
             'date_publication',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'app\models\grids\ActionColumn'],
         ],
     ]); ?>
 </div>

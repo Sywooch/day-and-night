@@ -30,7 +30,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'status')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'date_creature')->textInput() ?>
+
 
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>

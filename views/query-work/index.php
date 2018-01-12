@@ -25,15 +25,24 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'id_author',
+            // 'id',
+            [
+                'attribute' => 'id_author',
+                'label' => 'Автор заявки',
+                'value' => function ($data) {
+                    return $data->id_author;
+                },
+                'content' => function ($data) {
+                    return $data->author->username;
+                },
+            ],
             'text:ntext',
             'start_time',
             'end_time',
             // 'status',
             // 'date_query',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'app\models\grids\ActionColumn'],
         ],
     ]); ?>
 </div>

@@ -199,7 +199,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
             ],
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'app\models\grids\ActionColumn'],
         ],
     ]); ?>
 </div>
