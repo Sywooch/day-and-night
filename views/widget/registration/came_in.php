@@ -14,7 +14,7 @@ use yii\helpers\Html;
 <header class="page-header">
     <div class="col-xs-6">
         <div class="slog">
-            <h5>Wick Flame - “Когда человек занят делом, тогда он по-настоящему живёт”</h5>
+            <p>Wick Flame - “Когда человек занят делом, тогда он по-настоящему живёт”</p>
         </div>
     </div>
     <div class="col-xs-2">

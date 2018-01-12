@@ -55,8 +55,7 @@ $this->title = 'Главная';
                 <div class="content-main">
                     <div class="content-register">
                         <div class="register">
-                            <a name="register"></a>
-                            <div class="title"><h5>Регистрация :</h5></div>
+                            <h5>Регистрация :</h5>
 
                             <?php $form = ActiveForm::begin([
                                 'id' => 'form-signup',
@@ -73,23 +72,23 @@ $this->title = 'Главная';
 
                                     <?= $form->field($model, 'username')->textInput([
                                             'autofocus' => true,
-                                            'style' => 'height: 25px;',
+                                            'style' => 'height: 20px;',
                                     ]) ?>
 
                                     <?= $form->field($model, 'email')->input('email', [
-                                        'style' => 'height: 25px;',
+                                        'style' => 'height: 20px;',
                                     ]) ?>
 
                                     <?= $form->field($model, 'skype')->textInput([
-                                        'style' => 'height: 25px;',
+                                        'style' => 'height: 20px;',
                                     ]) ?>
 
                                     <?= $form->field($model, 'password')->passwordInput([
-                                        'style' => 'height: 25px;',
+                                        'style' => 'height: 20px;',
                                     ]) ?>
 
                                     <?= $form->field($model, 'confirmPassword')->passwordInput([
-                                        'style' => 'height: 25px;',
+                                        'style' => 'height: 20px;',
                                     ]) ?>
 
                                     <?= Html::submitButton('Зарегистрироваться', []) ?>
@@ -111,7 +110,7 @@ $this->title = 'Главная';
         <div class="col-xs-1"></div>
         <div class="col-xs-5">
             <div class="topics">
-                <h5>Последние статьи :</h5>
+                <h5>Полезная литература :</h5>
                 <p>- Как проверить уникальность?</p>
                 <p>- Для проверки уникальности воспользуйтесь сервисами…</p>
                 <p>- Примеры использования ключевых слов...</p>
