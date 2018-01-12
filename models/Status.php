@@ -25,12 +25,11 @@ class Status extends Model
     public function attributeLabels()
     {
         return [
-            'off',
-            'ok',
-            'на рассмотрении',
-            'выполнено',
-            '',
-            'в работе',
+            self::OFF => 'off',
+            self::OK => 'ok',
+            self::ZR => 'на рассмотрении',
+            self::DONE => 'выполнено',
+            self::IN_WORK => 'в работе',
         ];
     }
 
