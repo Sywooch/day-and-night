@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\MissionSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Missions';
+$this->title = 'Задания копирайтерам';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="mission-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Mission', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать задание', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([

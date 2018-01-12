@@ -8,7 +8,7 @@ use app\models\Status;
 /* @var $searchModel app\models\QuerySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Queries';
+$this->title = 'Запросы копирайтеров';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="query-index">
@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Query', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать запрос', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
