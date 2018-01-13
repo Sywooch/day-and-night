@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\models\TopicsUse */
 
 $this->title = 'Закрепить тему';
-$this->params['breadcrumbs'][] = ['label' => 'Испльзуемые темы', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Текущие темы', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="topics-use-create">

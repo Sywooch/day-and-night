@@ -348,23 +348,48 @@ AppAsset::register($this);
 
 
     .drop-menu{
-        background: rgb(10, 140, 150);
-        margin-left: 90px;
         position: fixed;
-        top: 75px;
-        right: 0;
+        background: rgb(10, 140, 150);
+        border-radius: 20px 0 0 20px;
+        top: 120px;
+        right: -180px;
+        transition: 1s;
     }
 
     .drop-menu:hover{
-        /*margin-left: 30px;*/
+        right: 0;
+        transition: 1.5s;
+    }
+
+    .drop-menu:hover .menu_block.button-M h2{
+        opacity: 0.3;
+        transition: 2s;
+    }
+
+    .drop-menu .menu_block.button-M h2{
+        margin-top: 25px;
+        transition: 2s;
     }
 
     .menu-tabs{
-        margin-left: 10px;
+        margin-left: 55px;
         color: rgb(234, 252, 255);
     }
 
+    .button-M{
+        -moz-transform: rotate(-90deg); /* Для Firefox */
+        -ms-transform: rotate(-90deg); /* Для IE */
+        -webkit-transform: rotate(-90deg); /* Для Safari, Chrome, iOS */
+        -o-transform: rotate(-90deg); /* Для Opera */
+        transform: rotate(-90deg);
+    }
 
+    .menu_block.button-M{
+        position: absolute;
+        top: 50%;
+        margin-top: -58px;
+        left: -36px;
+    }
 
 </style>
 
