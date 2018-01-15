@@ -9,7 +9,9 @@ use yii\grid\GridView;
 
 $this->title = 'Queries';
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
+
 <div class="query-index">
 
     <h1><?= Html::encode($this->title) ?></h1>

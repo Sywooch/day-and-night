@@ -354,11 +354,13 @@ AppAsset::register($this);
         top: 120px;
         right: -180px;
         transition: 1s;
+        height: 135px;
     }
 
     .drop-menu:hover{
         right: 0;
         transition: 1.5s;
+        height: inherit;
     }
 
     .drop-menu:hover .menu_block.button-M h2{
@@ -367,7 +369,7 @@ AppAsset::register($this);
     }
 
     .drop-menu .menu_block.button-M h2{
-        margin-top: 25px;
+        margin: 2px 50px 45px 10px;
         transition: 2s;
     }
 
@@ -390,6 +392,17 @@ AppAsset::register($this);
         margin-top: -58px;
         left: -36px;
     }
+
+    .drop-menu .menu_block.menu-tabs .nav.nav-stacked{
+        opacity: 0;
+    }
+
+    .drop-menu:hover .menu_block.menu-tabs .nav.nav-stacked {
+        opacity: 1;
+    }
+
+
+
 
 </style>
 
@@ -438,7 +451,11 @@ AppAsset::register($this);
         <?= $content ?>
     </div>
 
-    <?= \app\components\MenuWidget::widget() ?>
+    <?php if(Yii::$app->controller->id != 'site'): ?>
+
+        <?= \app\components\MenuWidget::widget() ?>
+
+    <?php endif; ?>
 
 </div>
 
