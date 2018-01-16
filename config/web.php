@@ -15,6 +15,9 @@ $config = [
         'rbac' => [
             'class' => 'yii2mod\rbac\Module',
         ],
+        'rbacMenegar' => [
+            'class' => 'app\modules\rbacMenegar\Module',
+        ],
     ],
     'components' => [
         'request' => [
