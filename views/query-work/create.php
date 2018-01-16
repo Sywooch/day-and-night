@@ -4,13 +4,13 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Mission */
+/* @var $model app\models\QueryWork */
 
-$this->title = 'Создание задания';
-$this->params['breadcrumbs'][] = ['label' => 'Задания копирайтерам', 'url' => ['index']];
+$this->title = 'Создание задачи';
+$this->params['breadcrumbs'][] = ['label' => 'Задачи разработчикам', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="mission-create">
+<div class="query-work-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

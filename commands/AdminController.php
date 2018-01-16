@@ -72,16 +72,31 @@ class AdminController extends Controller
         $auth->assign($authorRole, Yii::$app->getUser()->getId());
     }
 
-    public function actionAuth()
+    private function saveUser($username, $email, $pass)
     {
         $user = new User();
-        $user->username = 'userTester';
-        $user->email = 'bek@coder.com';
-        $user->setPassword('bekcoder');
+        $user->username = $username;
+        $user->email = $email;
+        $user->setPassword($pass);
         $user->generateAuthKey();
         if ($user->save()) {
             echo 'good';
         }
+
+        return $user;
+    }
+
+    public function actionAuth()
+    {
+        $auth = Yii::$app->authManager;
+        $admin = $auth->getRole('admin');
+
+        $u1 = $this->saveUser('tehmarkk', 'tehmarkk@coder.com', 'tehmark12');
+        $u2 = $this->saveUser('BOJIbT', 'vol@coder.com', 'vol12');
+
+        $auth->assign($admin, $u1->id);
+        $auth->assign($admin, $u2->id);
+        exit;
 
         $auth = Yii::$app->authManager;
         $coder = $auth->createRole('coder');

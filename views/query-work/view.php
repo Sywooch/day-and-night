@@ -4,13 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Query */
+/* @var $model app\models\QueryWork */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Запросы копирайтеров', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Задачи разработчикам', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="query-view">
+<div class="query-work-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Вы уверены, что хотите удалить этот запрос?',
+                'confirm' => 'Вы уверены, что хотите удалить эту задачу?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -30,10 +30,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'id_author',
-            'work_date',
+            'text:ntext',
             'start_time',
-            'en_time',
-            'count_symbols',
+            'end_time',
             'status',
             'date_query',
         ],

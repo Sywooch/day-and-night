@@ -16,6 +16,8 @@ class Status extends Model
     const OFF = 0;
     const OK = 1;
     const ZR = 2;
+    const DONE = 3;
+    const IN_WORK = 5;
 
     /**
      * @inheritdoc
@@ -23,9 +25,11 @@ class Status extends Model
     public function attributeLabels()
     {
         return [
-            'off',
-            'ok',
-            'Заявка на рассмотрении',
+            self::OFF => 'off',
+            self::OK => 'ok',
+            self::ZR => 'на рассмотрении',
+            self::DONE => 'выполнено',
+            self::IN_WORK => 'в работе',
         ];
     }
 

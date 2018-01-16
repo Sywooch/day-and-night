@@ -1,6 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
+ * @var $model \app\models\Mission
  * User: Admin
  * Date: 16.09.2017
  * Time: 17:37
@@ -32,8 +32,8 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Сонник про персик</td>
-                    <td>до 93% по content watch</td>
+                    <td><?= $model->article_name ?></td>
+                    <td><?= $model->uniqueness ?></td>
                     <td>3000-3500 знаков б.п.</td>
                 </tr>
                 <tr>

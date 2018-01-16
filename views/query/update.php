@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Query */
 
-$this->title = 'Update Query: {nameAttribute}';
-$this->params['breadcrumbs'][] = ['label' => 'Queries', 'url' => ['index']];
+$this->title = 'Редактирование запроса';
+$this->params['breadcrumbs'][] = ['label' => 'Запросы копирайтеров', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Редактирование запроса';
 ?>
 <div class="query-update">
 

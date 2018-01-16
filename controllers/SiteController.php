@@ -64,6 +64,16 @@ class SiteController extends BaseController
         return $this->render('a_red');
     }
 
+    /** Главный Редактор */
+    public function actionAQuery()
+    {
+        $queries = Query::find()->all();
+
+        return $this->render('a_query', [
+            'queries' => $queries,
+        ]);
+    }
+
     /** Правила для копирайтеров */
     public function actionAInstructions($id = null)
     {
