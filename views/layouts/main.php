@@ -464,12 +464,12 @@ AppAsset::register($this);
 <footer class="footer">
     <div class="line"></div>
     <p class="pull-center">
-        <?= Html::a('" Читать статьи "', '/site/a-articles', [
+        <?= Html::a(' < читать статьи > ', '/site/a-articles', [
             'class' => 'btn btn-link active btn-xs pull-left',
             'role' => 'button',
         ])?>
-        <a href="#" class="btn btn-link active btn-xs pull-left" role="button">e-mail: Wick-flame@mail.ru</a>
-        <a href="#" class="btn btn-link active btn-xs pull-left" role="button">" счетчик 2017 "</a>
+        <a href="#" class="btn btn-link active btn-xs pull-left" role="button"> Web-dn.com </a>
+        <a href="#" class="btn btn-link active btn-xs pull-left" role="button">< счетчик ></a>
     </p>
 </footer>
 
