@@ -45,7 +45,7 @@ use yii\bootstrap\ActiveForm;
     <div class="row">
         <div class="col-xs-6">
             <div class="slog">
-                <h5>Wick Flame - Постоянная и надежная работа для копирайтеров</h5>
+                <p>Web-dn " Постоянная и надежная работа для копирайтеров "</p>
             </div>
         </div>
 
@@ -68,7 +68,7 @@ use yii\bootstrap\ActiveForm;
                 <div class="clear"></div>
                 <div class="some">
                     <?= $form->field($model, 'rememberMe')->checkbox([
-                        'template' => " {label} {input}  <a href=\"#\">Забыли пароль</a>",
+                        'template' => " {label} {input}  <a href=\"#\">забыли пароль</a>",
                     ]) ?>
                 </div>
             </div>

@@ -12,7 +12,7 @@
 <?= \app\components\StatisticsWidget::widget() ?>
 
 <?= \app\components\TransitionWidget::widget([
-    'pageName' => 'Статьи',
+    'pageName' => 'читать статьи',
     'button1' => ['НОВОСТИ', '/site/a-news'],
     'button2' => ['КОММЕНТАРИИ РЕДАКТОРА', '/site/a-comments'],
     'button3' => ['ТЕКУЩИЕ ЗАДАНИЯ', '/site/cop-works'],

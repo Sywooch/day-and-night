@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\TopicsUseSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Используемые темы';
+$this->title = 'Текущие темы';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="topics-use-index">

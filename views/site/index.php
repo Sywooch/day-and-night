@@ -19,14 +19,14 @@ $this->title = 'Главная';
     <div class="row">
         <div class="col-xs-12">
             <h3>Умеете писать статьи?</h3>
-            <h3>Тогда любимое дело принесет Вам регулярный доход!</h3>
+            <h3>Тогда любимое дело принесет Вам доход %</h3>
         </div>
         <div class="col-xs-6">
-            <p>" Зарабатывайте дома по личному графику. Удаленно и Стабильно. "</p>
+            <p>" Зарабатывайте удаленно по личному графику !"</p>
         </div>
         <div class="col-xs-6">
             <?php if (Yii::$app->user->isGuest): ?>
-                <p>" Пройдите регистрацию, возьмите тему и напишите статью. "</p>
+                <p>" Пройдите регистрацию и возьмите задание !"</p>
             <?php endif; ?>
         </div>
     </div>
@@ -36,18 +36,15 @@ $this->title = 'Главная';
     <div class="row">
         <div class="offer">
             <div class="col-xs-6">
-                <h5>Преимущества от сотрудничества:</h5><br>
-                <p>Интересные темы</p>
-                <p>Четкие требования</p>
-                <p>Оперативная обратная<br>
-                   связь</p>
-                <p>Сроки выполнения<br>
-                    задания - 24 часа</p>
-                <p>Прием каждой статьи<br>
-                    до 3-х дней</p>
-                <p>Цена статьи 60 руб.</p>
-                <p>Гарантированная оплата<br>
-                   каждую неделю</p>
+                <h5>Сотрудничая с нами, Вы получаете:</h5><br>
+
+                <p>Интересные темы для творчества</p>
+                <p>Консультации и четкие требования</p>
+                <p>Оперативная техническая поддержка</p>
+                <p>Сроки выполнения задания - 24 часа</p>
+                <p>Прием каждой статьи до 3-х дней</p>
+                <p>Цена завершенной статьи - 60 руб.</p>
+                <p>Гарантированная оплата каждую неделю</p>
             </div>
         </div>
         <div class="col-xs-6">
@@ -55,8 +52,7 @@ $this->title = 'Главная';
                 <div class="content-main">
                     <div class="content-register">
                         <div class="register">
-                            <a name="register"></a>
-                            <div class="title"><h5>Регистрация :</h5></div>
+                            <h5>Регистрация :</h5>
 
                             <?php $form = ActiveForm::begin([
                                 'id' => 'form-signup',
@@ -73,23 +69,23 @@ $this->title = 'Главная';
 
                                     <?= $form->field($model, 'username')->textInput([
                                             'autofocus' => true,
-                                            'style' => 'height: 25px;',
+                                            'style' => 'height: 20px;',
                                     ]) ?>
 
                                     <?= $form->field($model, 'email')->input('email', [
-                                        'style' => 'height: 25px;',
+                                        'style' => 'height: 20px;',
                                     ]) ?>
 
                                     <?= $form->field($model, 'skype')->textInput([
-                                        'style' => 'height: 25px;',
+                                        'style' => 'height: 20px;',
                                     ]) ?>
 
                                     <?= $form->field($model, 'password')->passwordInput([
-                                        'style' => 'height: 25px;',
+                                        'style' => 'height: 20px;',
                                     ]) ?>
 
                                     <?= $form->field($model, 'confirmPassword')->passwordInput([
-                                        'style' => 'height: 25px;',
+                                        'style' => 'height: 20px;',
                                     ]) ?>
 
                                     <?= Html::submitButton('Зарегистрироваться', []) ?>
@@ -111,7 +107,7 @@ $this->title = 'Главная';
         <div class="col-xs-1"></div>
         <div class="col-xs-5">
             <div class="topics">
-                <h5>Последние статьи :</h5>
+                <h5>Читать статьи :</h5>
                 <p>- Как проверить уникальность?</p>
                 <p>- Для проверки уникальности воспользуйтесь сервисами…</p>
                 <p>- Примеры использования ключевых слов...</p>
@@ -120,11 +116,11 @@ $this->title = 'Главная';
         </div>
         <div class="col-xs-6">
             <div class="news-data">
-                <h6>Дата</h6>
-                <p>01.09.2017</p>
-                <p>01.10.2017</p>
-                <p>01.11.2017</p>
-                <p>01.12.2017</p>
+                <h6>дата</h6>
+                <p>01.07.2018</p>
+                <p>01.14.2018</p>
+                <p>01.19.2018</p>
+                <p>01.21.2018</p>
             </div>
         </div>
     </div>
