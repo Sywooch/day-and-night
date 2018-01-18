@@ -19,7 +19,7 @@ use \yii\bootstrap\ActiveForm;
 <?= StatisticsWidget::widget() ?>
 
 <?= TransitionWidget::widget([
-    'pageName' => 'Мой Профиль',
+    'pageName' => 'Профиль',
     'button1' => ['НОВОСТИ', '/site/a-news'],
     'button2' => ['КОММЕНТАРИИ РЕДАКТОРА', '/site/a-comments'],
     'button3' => ['ТЕКУЩИЕ ЗАДАНИЯ', '/site/cop-works'],
@@ -27,7 +27,6 @@ use \yii\bootstrap\ActiveForm;
 ]) ?>
 
 <div class="content-pro">
-
     <div class="col-xs-12"></div>
 
     <div class="col-xs-6">
@@ -83,13 +82,15 @@ use \yii\bootstrap\ActiveForm;
 //                            'id' => 'ererrr',
 //                        ]
 //                    ) ?>
+
                     <?= Html::endForm() ?>
                 <?php endforeach; ?>
 
-
             </div>
         </div>
+
         <div class="col-xs-4"></div>
+
     </div>
 </div><!-- .content-pro -->
 
