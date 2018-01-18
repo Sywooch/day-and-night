@@ -22,26 +22,27 @@
 
 <div class="content-table">
     <div class="col-xs-12">
-        <div class="in-work-table">
+        <div class="in-work">
             <table class="table btn-default">
                 <thead>
-                <tr>
-                    <th>Название статьи</th>
-                    <th>Уникальность</th>
-                    <th>Объем</th>
-                </tr>
+                    <tr>
+                        <th>Название статьи</th>
+                        <th>Уникальность</th>
+                        <th>Объем</th>
+                        <th>Сроки сдачи</th>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>Чем питается журавль?</td>
-                    <td>до 93% по content watch</td>
-                    <td>3000-3500 знаков б.п.</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td>Срок сдачи: 12.08 до 9:00</td>
-                </tr>
+                    <tr>
+                        <td>Чем питается журавль?</td>
+                        <td>до 93% по content watch</td>
+                        <td>3000-3500 знаков б.п.</td>
+                        <td>12.08 _ 9:00</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
                 </tbody>
             </table>
         </div>

@@ -23,29 +23,31 @@
 <div class="content-table">
 
     <div class="col-xs-12">
-        <table class="table btn-default">
-            <thead>
-            <tr>
-                <th>Название статьи</th>
-                <th>Уникальность</th>
-                <th>Объем</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Сонник про персик</td>
-                <td>до 93% по content watch</td>
-                <td>3000-3500 знаков б.п.</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>Доработать до: 23.08-15:00</td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="out-work">
+            <table class="table btn-default">
+                <thead>
+                    <tr>
+                        <th>Название статьи</th>
+                        <th>Уникальность</th>
+                        <th>Объем</th>
+                        <th>Сроки сдачи</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Сонник про персик</td>
+                        <td>до 93% по content watch</td>
+                        <td>3000-3500 знаков б.п.</td>
+                        <td>23.08 _ 15:00</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-
 </div><!-- .content-table -->
 
 <div class="content-topic">

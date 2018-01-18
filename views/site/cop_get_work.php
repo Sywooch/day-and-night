@@ -19,12 +19,12 @@ use \yii\bootstrap\ActiveForm;
 
 
 <div class="content-get">
-    <div class="row">
+    <div class="get-header">
         <div class="col-xs-6"><h5>Запрос на получение нового задания</h5></div>
         <div class="col-xs-6"><h5>Предыдущие запросы</h5></div>
     </div>
 
-    <div class="row">
+    <div class="get-work">
         <div class="col-xs-2"></div>
         <div class="col-xs-6">
             <?php $form = ActiveForm::begin([

@@ -464,12 +464,18 @@ AppAsset::register($this);
 <footer class="footer">
     <div class="line"></div>
     <p class="pull-center">
-        <?= Html::a(' < читать статьи > ', '/site/a-articles', [
-            'class' => 'btn btn-link active btn-xs pull-left',
-            'role' => 'button',
-        ])?>
-        <a href="#" class="btn btn-link active btn-xs pull-left" role="button"> Web-dn.com </a>
-        <a href="#" class="btn btn-link active btn-xs pull-left" role="button">< счетчик ></a>
+
+        <?php if(!Yii::$app->user->isGuest): ?>
+
+            <?= Html::a(' < читать статьи > ', '/site/a-articles', [
+                'class' => 'btn btn-link active btn-xs pull-left',
+                'role' => 'button',
+            ])?>
+
+        <?php endif; ?>
+
+        <a href="#" class="btn btn-link active btn-xs pull-left" role="button">' e-mail '</a>
+        <a href="#" class="btn btn-link active btn-xs pull-left" role="button">' счетчик ' ></a>
     </p>
 </footer>
 

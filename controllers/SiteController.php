@@ -188,6 +188,7 @@ class SiteController extends BaseController
      *
      * @return Response|string
      */
+
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
@@ -196,13 +197,13 @@ class SiteController extends BaseController
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->login()) {
-            return $this->goBack();
+            return $this->redirect('/site/cop-profile');
         }
 
         return $this->goBack();
-//        return $this->render('index', [
-//            'model' => $model,
-//        ]);
+        // return $this->render('index', [
+        // 'model' => $model,
+        // ]);
     }
 
     /**
@@ -210,6 +211,7 @@ class SiteController extends BaseController
      *
      * @return Response
      */
+
     public function actionLogout()
     {
         Yii::$app->user->logout();
