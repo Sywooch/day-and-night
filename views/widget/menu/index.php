@@ -44,7 +44,7 @@ use yii\helpers\Html;
                         <li><?= Html::a('Профиль', '/site/cop-profile') ?></li>
                         <li><?= Html::a('Получить задание', '/site/cop-get-work') ?></li>
                         <li><?= Html::a('Текущие задания', '/site/cop-works') ?></li>
-                        <li><?= Html::a('Статьи', '/site/a-articles') ?></li>
+                        <li><?= Html::a('Читать статьи', '/site/a-articles') ?></li>
                         <li><?= Html::a('Комментарии редактора', '/site/a-comments') ?></li>
                         <li class="nav-divider"></li>
                         <li><?= Html::a('Баланс', '#') ?></li>

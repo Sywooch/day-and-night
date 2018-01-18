@@ -21,58 +21,58 @@
 
 
 <div class="content-table">
-    <div class="row">
-        <div class="col-xs-12">
-            <table class="table btn-default">
-                <thead>
-                <tr>
-                    <th>Название статьи</th>
-                    <th>Уникальность</th>
-                    <th>Объем</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Сонник про персик</td>
-                    <td>до 93% по content watch</td>
-                    <td>3000-3500 знаков б.п.</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td>Доработать до: 23.08-15:00</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+
+    <div class="col-xs-12">
+        <table class="table btn-default">
+            <thead>
+            <tr>
+                <th>Название статьи</th>
+                <th>Уникальность</th>
+                <th>Объем</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Сонник про персик</td>
+                <td>до 93% по content watch</td>
+                <td>3000-3500 знаков б.п.</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Доработать до: 23.08-15:00</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
+
 </div><!-- .content-table -->
 
 <div class="content-topic">
-    <div class="row">
-        <div class="col-xs-6">
-            <p><b>Раскрыть тему</b></p>
-            <p>Сонник про персик</p>
-            <ul class="a">
-                <li>Введение</li>
-                <li>Толкование сна различными сонниками</li>
-                <li>Кому сниться сон?</li>
-                <li>И далее полностью задание</li>
-            </ul>
-            <p><b>Запрещены фразы</b></p>
-            <ul class="a"></ul><br>
-        </div>
-        <div class="col-xs-6">
-            <p><b>Ключевые слова</b> - количество раз. Главный ключ: "".</p>
-            <ul class="a">
-                <li>сон - 1</li>
-                <li>персик- 1</li>
-                <li>мужщина - 1</li>
-                <li>стол - 7</li>
-            </ul>
-            P.S. Слова можно видоизменять (любые формы), важно сохранить порядок слов.
-        </div>
+
+    <div class="col-xs-6">
+        <p><b>Раскрыть тему</b></p>
+        <p>Сонник про персик</p>
+        <ul class="a">
+            <li>Введение</li>
+            <li>Толкование сна различными сонниками</li>
+            <li>Кому сниться сон?</li>
+            <li>И далее полностью задание</li>
+        </ul>
+        <p><b>Запрещены фразы</b></p>
+        <ul class="a"></ul><br>
     </div>
+    <div class="col-xs-6">
+        <p><b>Ключевые слова</b> - количество раз. Главный ключ: "".</p>
+        <ul class="a">
+            <li>сон - 1</li>
+            <li>персик- 1</li>
+            <li>мужщина - 1</li>
+            <li>стол - 7</li>
+        </ul>
+        P.S. Слова можно видоизменять (любые формы), важно сохранить порядок слов.
+    </div>
+
 </div><!-- .content-topic -->
 
 <div class="comments">
