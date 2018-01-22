@@ -27,34 +27,32 @@ use \yii\bootstrap\ActiveForm;
 ]) ?>
 
 <div class="content-pro">
-    <div class="col-xs-12"></div>
 
     <div class="col-xs-6">
         <div class="content-register">
             <h5>Редактировать данные :</h5>
+
             <div class="register">
                 <a name="register"></a>
-                <?php $form = ActiveForm::begin([
-                    //'id' => 'edit-form',
-                    'method' => 'POST',
-                    'action' => "/site/cop-profile",
-                    'fieldConfig' => [
-                        'template' => "{label}{input}{error}",
-                    ],
-                ]); ?>
-                    <div class="register_form">
-                        <?= $form->field($model, 'username')->textInput() ?>
+                    <?php $form = ActiveForm::begin([
+                        //'id' => 'edit-form',
+                        'method' => 'POST',
+                        'action' => "/site/cop-profile",
+                        'fieldConfig' => [
+                            'template' => "{label}{input}{error}",
+                        ],
+                    ]); ?>
 
-                        <?= $form->field($model, 'email')->textInput() ?>
-
-                        <?= $form->field($model, 'skype')->textInput() ?>
-
-                        <?= $form->field($model, 'wmr')->textInput() ?>
-
-                        <?= Html::submitButton('Сохранить', ['name' => 'edit-form-button',]) ?>
-                    </div>
+                <div class="register_form">
+                    <?= $form->field($model, 'username')->textInput() ?>
+                    <?= $form->field($model, 'email')->textInput() ?>
+                    <?= $form->field($model, 'skype')->textInput() ?>
+                    <?= $form->field($model, 'wmr')->textInput() ?>
+                    <?= Html::submitButton('Сохранить', ['name' => 'edit-form-button',]) ?>
+                </div>
                 <?php ActiveForm::end(); ?>
             </div>
+
         </div>
     </div>
 
@@ -73,6 +71,7 @@ use \yii\bootstrap\ActiveForm;
                         'class' => 'btn btn-warning active btn-xs btn-block',
                         'role' => 'button',
                     ]) ?>
+
 <!--                    --><?//= Html::a(
 //                        $topic->name_topic,
 //                        [
@@ -88,10 +87,9 @@ use \yii\bootstrap\ActiveForm;
 
             </div>
         </div>
-
         <div class="col-xs-4"></div>
-
     </div>
+
 </div><!-- .content-pro -->
 
 <script>

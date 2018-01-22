@@ -51,7 +51,7 @@ $i = 0;
                 <a href="#" class="alert-link">
                     <?= $news->text ?>
                 </a>
-                <p>Дата публикации: <?= (new DateTime($news->date_publication))->format('d/m') ?></p>
+                <p>дата публикации: <?= (new DateTime($news->date_publication))->format('d/m') ?></p>
             </div>
 
         <?php endforeach; ?>

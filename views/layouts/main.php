@@ -197,6 +197,13 @@ AppAsset::register($this);
         padding-left: 40%;
     }
 
+    .choice .btn-warning {
+        background-image: none;
+        margin-bottom: 10px;
+    }
+
+
+
     .a_edit{
         color: rgba(255, 0, 0, 0.51);
         font-weight: 600;

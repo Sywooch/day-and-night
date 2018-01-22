@@ -27,7 +27,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'id_author',
-            'text:ntext',
+
+            //вместо 'text:ntext' - обрезка текста многоточием,
+            [
+                'attribute' => 'text',
+                'format' => 'ntext',
+                'content' => function ($data) {
+                    return app\models\ProcessingTextChange::shorteningText($data->text, 5);
+                },
+            ],
+
             'start_time',
             'end_time',
             // 'status',
