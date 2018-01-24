@@ -9,7 +9,9 @@ use yii\grid\GridView;
 
 $this->title = 'Новости';
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
+
 <div class="news-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -35,8 +37,18 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $data->author->username;
                 },
             ],
+
             'name',
-            'text:ntext',
+
+            //вместо 'text:ntext' - обрезка текста многоточием,
+            [
+                'attribute' => 'text',
+                'format' => 'ntext',
+                'content' => function ($data) {
+                    return app\models\ProcessingTextChange::shorteningText($data->text, 5);
+                },
+            ],
+
             'date_publication',
 
             ['class' => 'yii\grid\ActionColumn'],

@@ -21,26 +21,20 @@ use \app\components\TransitionWidget;
     'button4' => ['ПОЛУЧИТЬ ЗАДАНИЕ', '/site/cop-get-work'],
 ]) ?>
 
-<?= \app\components\IsAdminWidget::widget(['url' => '/manual']) ?>
+<div class="col-xs-12">
+    <?= \app\components\IsAdminWidget::widget(['url' => '/manual']) ?>
+</div>
 
 <div class="content-rules">
 
     <div class="col-xs-9">
-        <?= $current->text ?>
         <div class="top-text">
-            <h5>Приветствуем Вас и желаем удачи в освоении новой профессии!</h5><br>
-            <p>-- Прочитайте  правила работы, изучите обозначение терминов и примените их на практике.<br>
-               -- Если не получится с первого раза, не переживайте, всему можно обучиться постепенно.<br>
-               -- Работа в Web-dn идеально подходит начинающим копирайтерам.<br>
-               -- Требования, которые Вы видите в методичке – минимальны.<br>
-               -- Если Вы их освоите, то приобретете необходимый опыт и отличный старт для дальнейшего роста в копирайтинге.<br>
-               -- Быстрая обратная связь позволит автору моментально получить ответ на интересующий вопрос.<br>
-               -- Не стесняйся задавать вопросы в чате или на почту : Web-dn.com<br>
-            </p>
+            <?= $current->text ?>
         </div>
     </div>
 
     <div class="col-xs-1"></div>
+
     <div class="col-xs-2">
         <?php foreach ($instructions as $id => $instruction): ?>
             <?= Html::a($instruction->name, "/site/a-instructions/$id", [

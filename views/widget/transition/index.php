@@ -19,6 +19,7 @@ use yii\helpers\Html;
 
 <div class="content-com">
     <div class="col-xs-12">
+
         <div class="col-xs-6"></div>
         <div class="col-xs-3">
             <?php if($button1): ?>
@@ -40,8 +41,6 @@ use yii\helpers\Html;
                 </div>
             <?php endif; ?>
         </div>
-
-
 
         <div class="col-xs-3">
             <div class="open-now">
@@ -73,4 +72,5 @@ use yii\helpers\Html;
             <?php endif; ?>
         </div>
     </div>
+
 </div><!-- .content-com -->

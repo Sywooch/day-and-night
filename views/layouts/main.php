@@ -123,14 +123,19 @@ AppAsset::register($this);
         padding: 0;
     }
 
-    .slog, .login_box, .citations {
+    .slog, .citations, .login_box {
         text-align: center;
     }
 
-    .offer, .register, .news-data{
-        text-align: center;
+    .ef{
+        height: 25px;
+        padding: 1px 7px;
+        font-size: 13px;
     }
 
+    .offer, .register, .read-data{
+        text-align: center;
+    }
 
     .open-now {
         color: rgb(0, 120, 240);
@@ -153,10 +158,32 @@ AppAsset::register($this);
         text-align: center;
     }
 
+    .comments-title{
+        color: rgb(240, 6, 14);
+    }
+
     .register {
         width: 172px;
         margin: auto;
         padding: 0;
+    }
+
+    .form-group {
+        margin-bottom: 7px;
+    }
+
+    p.help-block {
+        display: block;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        color: #737373;
+        font-size: 8pt;
+    }
+
+    .register_form .form-control {
+        height: 25px;
+        padding: 1px 7px;
+        font-size: 13px;
     }
 
     .register_form label {
@@ -165,6 +192,8 @@ AppAsset::register($this);
         cursor: default;
         width: 100%;
         margin: auto;
+        height: 10px;
+
     }
 
     .register_form button {
@@ -172,19 +201,20 @@ AppAsset::register($this);
         border-radius: 2px;
         padding: 5px 0 0 0;
         width: 100%;
+        height: 25px;
     }
 
     .register_form button[type=submit] {
         background: #0bb4eb;
-        border: 2px solid #0bb4eb;
+        border: 1px solid #0bb4eb;
         font-size: 9pt;
         font-family: 'Open Sans', sans-serif;
         font-weight: 700;
         text-shadow: 1px 1px 1px #0bb4eb;
         color: #fff;
-        border-radius: 2px;
+        border-radius: 3px;
         width: 100%;
-        margin: 5px 0 5px 0;
+        margin: 10px 0 0 0;
         padding: 0;
         text-transform: uppercase;
     }
@@ -196,6 +226,13 @@ AppAsset::register($this);
     .pull-center {
         padding-left: 40%;
     }
+
+    .choice .btn-warning {
+        background-image: none;
+        margin-bottom: 10px;
+    }
+
+
 
     .a_edit{
         color: rgba(255, 0, 0, 0.51);
