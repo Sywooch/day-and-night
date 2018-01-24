@@ -54,13 +54,12 @@ use \yii\bootstrap\ActiveForm;
                 <?= $form->field($model, 'count_symbols')->textInput([
                     'value' => '0',
                 ]) ?>
-
-                <?= \yii\bootstrap\Html::submitButton('ПОДАТЬ ЗАЯВКУ', [
-                    'class' => 'btn btn-warning active btn-sm btn-block',
-                ]) ?>
-
+                <div class="col-xs-12">
+                    <?= \yii\bootstrap\Html::submitButton('ПОДАТЬ ЗАЯВКУ', [
+                        'class' => 'btn btn-warning active btn-sm btn-block',
+                    ]) ?>
+                </div>
                 <?php ActiveForm::end(); ?>
-
             </div>
         </div>
         <div class="col-xs-2"></div>
