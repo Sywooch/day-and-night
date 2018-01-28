@@ -15,8 +15,8 @@ $config = [
         'rbac' => [
             'class' => 'yii2mod\rbac\Module',
         ],
-        'rbacMenegar' => [
-            'class' => 'app\modules\rbacMenegar\Module',
+        'rbacManager' => [
+            'class' => 'app\modules\rbacManager\Module',
         ],
     ],
     'components' => [
@@ -37,6 +37,7 @@ $config = [
 //                'site' => 'category/index',
 //                'site/index' => 'category/index',
                 'site/a-instructions/<id:\d+>' => 'site/a-instructions',
+                //'rbacMenegar/create' => 'rbacMenegar/create',
 
                 'category/create-element' => 'category/create-element',
                 'category/update-element/<id:\d+>' => 'category/update-element',
@@ -46,6 +47,8 @@ $config = [
 
                 'category/run-my-modal/<is:\d+>' => 'category/run-my-modal',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+
+                '<module:\w+>/<controller:\w+>/<action:\w+>/<name:\w+>' => '<module>/<controller>/<action>',
             ],
         ],
         'user' => [

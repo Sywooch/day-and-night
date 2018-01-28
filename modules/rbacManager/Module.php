@@ -1,16 +1,16 @@
 <?php
 
-namespace app\modules\rbacMenegar;
+namespace app\modules\rbacManager;
 
 /**
- * rbacMenegar module definition class
+ * role_manager module definition class
  */
 class Module extends \yii\base\Module
 {
     /**
      * @inheritdoc
      */
-    public $controllerNamespace = 'app\modules\rbacMenegar\controllers';
+    public $controllerNamespace = 'app\modules\rbacManager\controllers';
 
     /**
      * @inheritdoc
