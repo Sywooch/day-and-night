@@ -21,8 +21,9 @@
 
 
 <div class="content-tables">
-    <div class="row">
-        <div class="col-xs-12">
+
+    <div class="col-xs-12">
+        <div class="calculation">
             <table class="table table-bordered btn-default">
                 <thead>
                 <tr>
@@ -81,4 +82,5 @@
             </table>
         </div>
     </div>
+
 </div><!-- .content-tables -->

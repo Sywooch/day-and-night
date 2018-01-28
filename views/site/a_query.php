@@ -9,65 +9,65 @@
 
 
 <div class="content-bal">
-    <div class="row">
-        <div class="col-xs-2">
-            <div class="sum">
-                <div class="btn-group-vertical btn-block">
-                    <button type="button" class="btn btn-success active btn-xs">Текущий баланс</button>
-                    <button type="button" class="btn btn-default active btn-xs">Ставка</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-1">
-            <div class="rub">
-                <div class="btn-group-vertical btn-block">
-                    <a href="#" class="btn btn-success active btn-xs" role="button">3200 р.</a>
-                    <a href="#" class="btn btn-default active btn-xs" role="button">15 р.</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-2">
-            <div class="cost">
-                <div class="btn-group-vertical btn-block">
-                    <button type="button" class="btn btn-success active btn-xs">Проверено</button>
-                    <a href="#" class="btn btn-default active btn-xs" role="button">5</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-1"></div>
-        <div class="col-xs-1">
-            <div class="work-new">
-                <div class="btn-group-vertical btn-block">
-                    <button type="button" class="btn btn-success active btn-xs">Проверить</button>
-                    <a href="#" class="btn btn-default active btn-xs" role="button">1</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-1">
-            <div class="work-now">
-                <div class="btn-group-vertical btn-block">
-                    <button type="button" class="btn btn-success active btn-xs">В работе</button>
-                    <a href="#" class="btn btn-default active btn-xs" role="button">1</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-2">
-            <div class="work-final">
-                <div class="btn-group-vertical btn-block">
-                    <button type="button" class="btn btn-success active btn-xs">На доработке</button>
-                    <a href="#" class="btn btn-default active btn-xs" role="button">1</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-2">
-            <div class="work-test">
-                <div class="btn-group-vertical btn-block">
-                    <button type="button" class="btn btn-success active btn-xs">С доработки</button>
-                    <a href="#" class="btn btn-default active btn-xs" role="button">3</a>
-                </div>
+
+    <div class="col-xs-2">
+        <div class="sum">
+            <div class="btn-group-vertical btn-block">
+                <button type="button" class="btn btn-success active btn-xs">Текущий баланс</button>
+                <button type="button" class="btn btn-default active btn-xs">Ставка</button>
             </div>
         </div>
     </div>
+    <div class="col-xs-1">
+        <div class="rub">
+            <div class="btn-group-vertical btn-block">
+                <a href="#" class="btn btn-success active btn-xs" role="button">3200 р.</a>
+                <a href="#" class="btn btn-default active btn-xs" role="button">15 р.</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-2">
+        <div class="cost">
+            <div class="btn-group-vertical btn-block">
+                <button type="button" class="btn btn-success active btn-xs">Проверено</button>
+                <a href="#" class="btn btn-default active btn-xs" role="button">5</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-1"></div>
+    <div class="col-xs-1">
+        <div class="work-new">
+            <div class="btn-group-vertical btn-block">
+                <button type="button" class="btn btn-success active btn-xs">Проверить</button>
+                <a href="#" class="btn btn-default active btn-xs" role="button">1</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-1">
+        <div class="work-now">
+            <div class="btn-group-vertical btn-block">
+                <button type="button" class="btn btn-success active btn-xs">В работе</button>
+                <a href="#" class="btn btn-default active btn-xs" role="button">1</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-2">
+        <div class="work-final">
+            <div class="btn-group-vertical btn-block">
+                <button type="button" class="btn btn-success active btn-xs">На доработке</button>
+                <a href="#" class="btn btn-default active btn-xs" role="button">1</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-2">
+        <div class="work-test">
+            <div class="btn-group-vertical btn-block">
+                <button type="button" class="btn btn-success active btn-xs">С доработки</button>
+                <a href="#" class="btn btn-default active btn-xs" role="button">3</a>
+            </div>
+        </div>
+    </div>
+
 </div><!-- .content-bal-->
 
 
@@ -82,8 +82,9 @@
 
 
 <div class="content-tables">
-    <div class="row">
-        <div class="col-xs-12">
+
+    <div class="col-xs-12">
+        <div class="job-query">
             <table class="table table-bordered btn-default">
                 <thead>
                 <tr>
@@ -114,4 +115,5 @@
             </table>
         </div>
     </div>
+
 </div><!-- .content-tables -->

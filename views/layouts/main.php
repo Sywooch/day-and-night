@@ -37,23 +37,42 @@ AppAsset::register($this);
     }
 
     [class*="col-"] {
-        border: 1px solid rgba(132, 236, 255, 0.01);
+        border: 3px solid rgba(132, 236, 255, 0.01);
         position: relative;
         margin: 5px 0 5px 0;
         padding: 5px 0 5px 0;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-        color: rgb(0, 130, 210);
+    h1, h3, h5 {
+        color: rgb(0, 130, 130);
         font-family: 'Open Sans', serif;
-        font-style: italic;
+        font-style: normal;
     }
 
-    p, span {
-        color: rgb(0,138,138);
+    h2 {
+        color: rgb(2, 2, 150);
+        font-family: 'Open Sans', serif;
+        font-style: normal;
+    }
+
+    h4, h6 {
+        color: rgb(0, 130, 210);
+        font-family: 'Open Sans', serif;
+        font-style: normal;
+    }
+
+    p {
+        color: rgb(39, 39, 150);
         font-family: 'Open Sans', serif;
         font-size: 10pt;
     }
+
+    span {
+        color: rgb(2, 2, 150);
+        font-family: 'Open Sans', serif;
+        font-size: 10pt;
+    }
+
 
     .line {
         width: 95%;
@@ -67,6 +86,7 @@ AppAsset::register($this);
 
     ul.a {
         list-style-type: circle;
+
     }
 
     .layerP, .layerK {
@@ -87,7 +107,8 @@ AppAsset::register($this);
         border: solid 1px black; /* Параметры рамки */
     }
 
-    label, a  {
+    label, a {
+        color: rgb(39, 39, 150);
         display: inline-block;
         max-width: 100%;
         margin-bottom: 1px;
@@ -102,14 +123,19 @@ AppAsset::register($this);
         padding: 0;
     }
 
-    .slog, .login_box, .citations {
+    .slog, .citations, .login_box {
         text-align: center;
     }
 
-    .offer, .register, .news-data{
-        text-align: center;
+    .ef{
+        height: 25px;
+        padding: 1px 7px;
+        font-size: 13px;
     }
 
+    .offer, .register, .read-data{
+        text-align: center;
+    }
 
     .open-now {
         color: rgb(0, 120, 240);
@@ -132,10 +158,32 @@ AppAsset::register($this);
         text-align: center;
     }
 
+    .comments-title{
+        color: rgb(240, 6, 14);
+    }
+
     .register {
         width: 172px;
         margin: auto;
         padding: 0;
+    }
+
+    .form-group {
+        margin-bottom: 7px;
+    }
+
+    p.help-block {
+        display: block;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        color: #737373;
+        font-size: 8pt;
+    }
+
+    .register_form .form-control {
+        height: 25px;
+        padding: 1px 7px;
+        font-size: 13px;
     }
 
     .register_form label {
@@ -144,6 +192,8 @@ AppAsset::register($this);
         cursor: default;
         width: 100%;
         margin: auto;
+        height: 10px;
+
     }
 
     .register_form button {
@@ -151,19 +201,20 @@ AppAsset::register($this);
         border-radius: 2px;
         padding: 5px 0 0 0;
         width: 100%;
+        height: 25px;
     }
 
     .register_form button[type=submit] {
         background: #0bb4eb;
-        border: 5px solid #0bb4eb;
+        border: 1px solid #0bb4eb;
         font-size: 9pt;
         font-family: 'Open Sans', sans-serif;
         font-weight: 700;
         text-shadow: 1px 1px 1px #0bb4eb;
         color: #fff;
-        border-radius: 4px;
+        border-radius: 3px;
         width: 100%;
-        margin: 18px 0 17px 0;
+        margin: 10px 0 0 0;
         padding: 0;
         text-transform: uppercase;
     }
@@ -175,6 +226,13 @@ AppAsset::register($this);
     .pull-center {
         padding-left: 40%;
     }
+
+    .choice .btn-warning {
+        background-image: none;
+        margin-bottom: 10px;
+    }
+
+
 
     .a_edit{
         color: rgba(255, 0, 0, 0.51);
@@ -189,10 +247,201 @@ AppAsset::register($this);
         color: rgba(255, 0, 0, 0.95);
         text-decoration: none;
     }
+    a.button15 {
+        display: inline-block;
+        font-family: arial,sans-serif;
+        font-size: 11px;
+        font-weight: bold;
+        color: rgb(28, 111, 39);
+        text-decoration: none;
+        user-select: none;
+        padding: .2em 1.2em;
+        outline: none;
+        border: 1px solid rgba(0,0,0,.1);
+        border-radius: 2px;
+        background: rgb(21, 239, 20) linear-gradient(rgba(33, 169, 52, 0.52), rgba(36, 195, 41, 0.34));
+        transition: all .218s ease 0s;
+    }
+    a.button15:hover {
+        color: rgb(24,24,24);
+        border: 1px solid rgb(198,198,198);
+        background: rgb(21, 239, 20) linear-gradient(rgba(33, 169, 52, 0.52), rgba(36, 195, 41, 0.34));
+        box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    }
+    a.button15:active {
+        color: rgb(51,51,51);
+        border: 1px solid rgb(204,204,204);
+        background: rgb(21, 239, 20) linear-gradient(rgba(33, 169, 52, 0.52), rgba(36, 195, 41, 0.34));
+        box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
+    }
+    a.button15:focus:not(:active) {
+        border: 1px solid rgb(22,32,43);
+        border-bottom: 1px solid rgb(25,34,45);
+        background: rgb(53,61,71);
+        box-shadow:
+                inset 0 1px 3px rgba(0,10,20,.5),
+                0 1px rgb(83,94,104),
+                0 0 1px rgb(86,96,106);
+        pointer-events: none;
+    }
+
+    a.button17 {
+        display: inline-block;
+        font-family: arial,sans-serif;
+        font-size: 11px;
+        color: rgb(205,216,228);
+        text-shadow: 0 -1px rgb(46,53,58);
+        text-decoration: none;
+        user-select: none;
+        line-height: 2em;
+        padding: 1px 1.2em;
+        outline: none;
+        border: 1px solid rgba(33,43,52,1);
+        border-radius: 3px;
+        background: rgb(81,92,102) linear-gradient(rgb(81,92,102), rgb(69,78,87));
+        box-shadow:
+                inset 0 1px rgba(101,114,126,1),
+                inset 0 0 1px rgba(140,150,170,.8),
+                0 1px rgb(83,94,104),
+                0 0 1px rgb(86,96,106);
+    }
+    a.button17:active {
+        box-shadow:
+                inset 0 1px 3px rgba(0,10,20,.5),
+                0 1px rgb(83,94,104),
+                0 0 1px rgb(86,96,106);
+    }
+    a.button17:focus:not(:active) {
+        border: 1px solid rgb(22,32,43);
+        border-bottom: 1px solid rgb(25,34,45);
+        background: rgb(53,61,71);
+        box-shadow:
+                inset 0 1px 3px rgba(0,10,20,.5),
+                0 1px rgb(83,94,104),
+                0 0 1px rgb(86,96,106);
+        pointer-events: none;
+    }
+
+
+    a.button21 {
+        display: inline-block;
+        width: 2em;
+        height: 2em;
+        line-height: 2em;
+        vertical-align: middle;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        color: rgb(0,0,0);
+        outline: none;
+        border: 1px solid rgba(0,0,0,.4);
+        border-top-color: rgba(0,0,0,.3);
+        border-radius: 2px;
+        background: linear-gradient(rgb(255,255,255), rgb(240,240,240));
+        box-shadow:
+                0 0 3px rgba(0,0,0,0) inset,
+                0 1px 1px 1px rgba(255,255,255,.2),
+                0 -1px 1px 1px rgba(0,0,0,0);
+        transition: .2s ease-in-out;
+    }
+    a.button21:hover:not(:active) {
+        box-shadow:
+                0 0 3px rgba(0,0,0,0) inset,
+                0 1px 1px 1px rgba(0,255,255,.5),
+                0 -1px 1px 1px rgba(0,255,255,.5);
+    }
+    a.button21:active {
+
+        background: linear-gradient(rgb(250,250,250), rgb(235,235,235));
+        box-shadow:
+                0 0 3px rgba(0,0,0,.5) inset,
+                0 1px 1px 1px rgba(255,255,255,.4),
+                0 -1px 1px 1px rgba(0,0,0,.1);
+        transition: .2s ease-in-out;
+    }
+
+    a.button21{
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        line-height: 1em;
+        vertical-align: middle;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        color: rgb(0,0,0);
+        outline: none;
+        border: 1px solid rgba(0,0,0,.4);
+        border-top-color: rgba(0,0,0,.3);
+        border-radius: 2px;
+        background: linear-gradient(rgba(62, 197, 129, 0.58), rgba(120, 222, 138, 0.68));
+        box-shadow: 0 0 3px rgba(33, 202, 44, 0.4) inset, 1px 5px 9px 7px rgba(41, 243, 9, 0.4), 1px -2px 8px 7px rgba(21, 212, 35, 0.35);
+        transition: .2s ease-in-out;
+    }
+
+    a.button21.button21O{
+        margin-left: -3px;
+    }
+
+
+    .drop-menu{
+        position: fixed;
+        background: rgb(10, 140, 150);
+        border-radius: 20px 0 0 20px;
+        top: 120px;
+        right: -180px;
+        transition: 1s;
+        height: 135px;
+    }
+
+    .drop-menu:hover{
+        right: 0;
+        transition: 1.5s;
+        height: inherit;
+    }
+
+    .drop-menu:hover .menu_block.button-M h2{
+        opacity: 0.3;
+        transition: 2s;
+    }
+
+    .drop-menu .menu_block.button-M h2{
+        margin: 2px 50px 45px 10px;
+        transition: 2s;
+    }
+
+    .menu-tabs{
+        margin-left: 55px;
+        color: rgb(234, 252, 255);
+    }
+
+    .button-M{
+        -moz-transform: rotate(-90deg); /* Для Firefox */
+        -ms-transform: rotate(-90deg); /* Для IE */
+        -webkit-transform: rotate(-90deg); /* Для Safari, Chrome, iOS */
+        -o-transform: rotate(-90deg); /* Для Opera */
+        transform: rotate(-90deg);
+    }
+
+    .menu_block.button-M{
+        position: absolute;
+        top: 50%;
+        margin-top: -58px;
+        left: -36px;
+    }
+
+    .drop-menu .menu_block.menu-tabs .nav.nav-stacked{
+        opacity: 0;
+    }
+
+    .drop-menu:hover .menu_block.menu-tabs .nav.nav-stacked {
+        opacity: 1;
+    }
+
+
+
 
 </style>
-
-
 
 
 <div class="wrap">
@@ -238,17 +487,32 @@ AppAsset::register($this);
 
         <?= $content ?>
     </div>
+
+    <?php if(Yii::$app->controller->id != 'site'): ?>
+
+        <?= \app\components\MenuWidget::widget() ?>
+
+    <?php endif; ?>
+
 </div>
+
+
 
 <footer class="footer">
     <div class="line"></div>
     <p class="pull-center">
-        <?= Html::a('" Читать статьи "', '/site/a-articles', [
-            'class' => 'btn btn-link active btn-xs pull-left',
-            'role' => 'button',
-        ])?>
-        <a href="#" class="btn btn-link active btn-xs pull-left" role="button">E-mail: Wick-flame@mail.ru</a>
-        <a href="#" class="btn btn-link active btn-xs pull-left" role="button">" счетчик 2017 "</a>
+
+        <?php if(!Yii::$app->user->isGuest): ?>
+
+            <?= Html::a(' < читать статьи > ', '/site/a-articles', [
+                'class' => 'btn btn-link active btn-xs pull-left',
+                'role' => 'button',
+            ])?>
+
+        <?php endif; ?>
+
+        <a href="#" class="btn btn-link active btn-xs pull-left" role="button">' e-mail '</a>
+        <a href="#" class="btn btn-link active btn-xs pull-left" role="button">' счетчик ' ></a>
     </p>
 </footer>
 

@@ -42,20 +42,19 @@ $i = 0;
 <?= \app\components\IsAdminWidget::widget(['url' => '/news']) ?>
 
 <div class="content-news">
-    <div class="row">
-        <div class="col-xs-12">
 
-            <?php foreach ($items as $news): ?>
-                <?php $alert = alert($i); $i = $alert[0];?>
-                <div class="alert alert-<?= $alert[1] ?>" role="alert">
-                    <a href="#" class="alert-link">
-                        <?= $news->text ?>
-                    </a>
-                    <p>Дата публикации: <?= (new DateTime($news->date_publication))->format('d/m') ?></p>
-                </div>
+    <div class="col-xs-12">
+        <?php foreach ($items as $news): ?>
+            <?php $alert = alert($i); $i = $alert[0];?>
 
-            <?php endforeach; ?>
+            <div class="alert alert-<?= $alert[1] ?>" role="alert">
+                <a href="#" class="alert-link">
+                    <?= $news->text ?>
+                </a>
+                <p>дата публикации: <?= (new DateTime($news->date_publication))->format('d/m') ?></p>
+            </div>
 
-        </div>
+        <?php endforeach; ?>
     </div>
+
 </div><!-- .content-news -->

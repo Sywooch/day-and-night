@@ -25,20 +25,20 @@ class Status extends Model
     public function attributeLabels()
     {
         return [
-            self::OFF => 'off',
-            self::OK => 'ok',
-            self::ZR => 'на рассмотрении',
-            self::DONE => 'выполнено',
-            self::IN_WORK => 'в работе',
+            self::OFF => 'OFF',
+            self::OK => 'OK',
+            self::ZR => 'НА РАССМОТРЕНИИ',
+            self::DONE => 'ВЫПОЛНЕНО',
+            self::IN_WORK => 'В РАБОТЕ',
         ];
     }
 
     public function statusStyle()
     {
         return [
-            'btn-danger',
-            'btn-primary',
-            'btn-info',
+            'btn btn-danger btn-sm btn-block',
+            'btn btn-primary btn-sm btn-block',
+            'btn btn-info btn-sm btn-block',
         ];
     }
 
