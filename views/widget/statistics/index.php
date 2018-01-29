@@ -12,7 +12,7 @@ use yii\helpers\Html;
 
 
 <div class="content-bal">
-    <div class="row">
+    <div class="counts">
         <div class="col-xs-2">
             <div class="sum">
                 <div class="btn-group-vertical btn-block">

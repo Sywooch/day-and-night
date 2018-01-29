@@ -10,7 +10,9 @@ use app\models\Status;
 
 $this->title = 'Запросы копирайтеров';
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
+
 <div class="query-index">
 
     <h1><?= Html::encode($this->title) ?></h1>

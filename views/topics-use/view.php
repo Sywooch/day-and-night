@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\TopicsUse */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Используемые темы', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Текущие темы', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="topics-use-view">

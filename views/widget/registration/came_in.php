@@ -14,12 +14,12 @@ use yii\helpers\Html;
 <header class="page-header">
     <div class="col-xs-6">
         <div class="slog">
-            <h5>Wick Flame - “Когда человек занят делом, тогда он по-настоящему живёт”</h5>
+            <p>Web-dn “Когда человек занят делом, тогда он по-настоящему живёт”</p>
         </div>
     </div>
     <div class="col-xs-2">
         <div class="instructions">
-            <?= Html::a('" Правила "', '/site/a-instructions', [
+            <?= Html::a(' ПРАВИЛА ', '/site/a-instructions', [
                 'class' => 'btn btn-info active btn-xs btn-block',
                 'role' => 'button',
             ])?>
@@ -27,7 +27,7 @@ use yii\helpers\Html;
     </div>
     <div class="col-xs-2">
         <div class="profile">
-            <?= Html::a('" Профиль "', '/site/cop-profile', [
+            <?= Html::a(' ПРОФИЛЬ ', '/site/cop-profile', [
                 'class' => 'btn btn-info active btn-xs btn-block',
                 'role' => 'button',
             ])?>

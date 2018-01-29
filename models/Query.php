@@ -47,8 +47,8 @@ class Query extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'id_author' => 'Составитель',
-            'work_date' => 'Выберите дату',
+            'id_author' => 'Пользователь',
+            'work_date' => 'Дата начала работы',
             'start_time' => 'Время начала работы',
             'en_time' => 'Время сдачи работы',
             'count_symbols' => 'Количество символов',

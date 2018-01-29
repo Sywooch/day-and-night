@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\TopicsUse */
 
 $this->title = 'Обновление связи';
-$this->params['breadcrumbs'][] = ['label' => 'Используемые темы', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Текущие темы', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Обновление связи';
 ?>

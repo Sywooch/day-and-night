@@ -19,74 +19,80 @@ use \yii\bootstrap\ActiveForm;
 
 
 <div class="content-get">
-    <div class="row">
-        <div class="col-xs-6"><h5>Запрос на получение нового задания</h5></div>
-        <div class="col-xs-6"><h5>Предыдущие запросы</h5></div>
+
+    <div class="col-xs-6">
+        <h5>Запрос на получение нового задания</h5>
+        <div class="col-xs-2"></div>
+
+        <div class="col-xs-8">
+            <div class="job-request">
+
+                <?php $form = ActiveForm::begin([
+                    'id' => 'form-query',
+                    'method' => 'POST',
+                    'fieldConfig' => [
+                        'template' => "<div class='col-md-8'><a href=\"#\" class=\"btn btn-warning active btn-md btn-block\" role=\"button\" style='text-transform: uppercase;'>{label}</a></div><div class='col-md-4'>{input}{error}</div>",
+                        'labelOptions' => ['style' => 'font-size: 8pt;'],
+                    ],
+                ]); ?>
+
+                <?= $form->field($model, 'work_date')->textInput([
+                    'id' => 'calendar',
+                    'value' => $model->work_date ?: (new DateTime())->format('d-m-Y'),
+                ]) ?>
+
+                <?= $form->field($model, 'start_time')->textInput([
+                    'type' => 'time',
+                    'value' => $model->start_time ?: (new DateTime())->format('H:i'),
+                ]) ?>
+
+                <?= $form->field($model, 'en_time')->textInput([
+                    'type' => 'time',
+                    'value' => $model->en_time ?: (new DateTime())->modify('+9 hour')->format('H:i'),
+                ]) ?>
+
+                <?= $form->field($model, 'count_symbols')->textInput([
+                    'value' => '0',
+                ]) ?>
+                <div class="col-xs-12">
+                    <?= \yii\bootstrap\Html::submitButton('ПОДАТЬ ЗАЯВКУ', [
+                        'class' => 'btn btn-warning active btn-sm btn-block',
+                    ]) ?>
+                </div>
+                <?php ActiveForm::end(); ?>
+            </div>
+        </div>
+        <div class="col-xs-2"></div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-2"></div>
+    <div class="col-xs-6">
+        <h5>Предыдущие запросы</h5>
+        <div class="col-xs-3"></div>
         <div class="col-xs-6">
-            <?php $form = ActiveForm::begin([
-                'id' => 'form-query',
-                'method' => 'POST',
-                'fieldConfig' => [
-                    'template' => "<div class='row'><div class='col-xs-4'><a href=\"#\" class=\"btn btn-warning active btn-xs btn-block\" role=\"button\" style='text-transform: uppercase;'>{label}</a></div><div class='col-xs-3'>{input}{error}</div></div>",
-                    'labelOptions' => ['style' => 'font-size: 10pt;'],
-                ],
-            ]); ?>
+            <div class="past-requests">
 
-            <?= $form->field($model, 'work_date')->textInput([
-                'id' => 'calendar',
-                'value' => $model->work_date ?: (new DateTime())->format('d-m-Y'),
-                'style' => 'margin-top: -6px;',
-            ]) ?>
+                <?php foreach ($requests as $request): ?>
 
-            <?= $form->field($model, 'start_time')->textInput([
-                'type' => 'time',
-                'value' => $model->start_time ?: (new DateTime())->format('H:i'),
-                'style' => 'margin-top: -6px; width: 100px;',
-            ]) ?>
+                <p>" <?= $request->work_date ?> " Количество символов: <?= $request->count_symbols ?></p>
 
-            <?= $form->field($model, 'en_time')->textInput([
-                'type' => 'time',
-                'value' => $model->en_time ?: (new DateTime())->modify('+9 hour')->format('H:i'),
-                'style' => 'margin-top: -6px; width: 100px;',
-            ]) ?>
+                <?= \app\models\Status::getLabel($request->status) ?><br>
 
-            <?= $form->field($model, 'count_symbols')->textInput([
-                'value' => '0',
-                'style' => 'margin-top: -6px; width: 100px;',
-            ]) ?>
-
-            <?= \yii\bootstrap\Html::submitButton('Подать заявку', [
-                'class' => 'btn btn-warning active btn-xs btn-block',
-                'style' => 'width: 365px; height: 30px; font-size: 12pt; text-transform: uppercase;',
-            ]) ?>
-
-            <?php ActiveForm::end(); ?>
-
-        </div>
-
-        <div class="col-xs-2"></div>
-        <div class="col-xs-2"></div>
-        <div class="col-xs-2">
-            <?php foreach ($requests as $request): ?>
-                <?= $request->work_date ?> . . . Кол. символов - <?= $request->count_symbols ?>
-                <?= \app\models\Status::getLabel($request->status) ?>
                 <?= \yii\bootstrap\Html::a('ОТМЕНИТЬ', ['/query/delete', 'id' => $request->id], [
-                    'class' => 'btn btn-warning active btn-xs btn-block',
+                    'class' => 'btn btn-default active btn-sm btn-block',
                     'data' => [
                         'confirm' => 'Вы точно хотите отменить заявку на задание?',
                         'method' => 'post',
                     ],
-                ]) ?>
-                <br />
-            <?php endforeach; ?>
+                ]) ?><br>
+
+                <?php endforeach; ?>
+
+            </div>
         </div>
-        <div class="col-xs-2"></div>
+        <div class="col-xs-3"></div>
     </div>
-</div><!-- .content-rules -->
+
+</div><!-- .content-get -->
 
 <script type="text/javascript">
     window.onload = function() {
