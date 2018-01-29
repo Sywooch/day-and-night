@@ -108,7 +108,7 @@ AppAsset::register($this);
     }
 
     label, a {
-        color: rgb(39, 39, 150);
+        color: rgb(2, 2, 150);
         display: inline-block;
         max-width: 100%;
         margin-bottom: 1px;
@@ -117,20 +117,27 @@ AppAsset::register($this);
     }
 
 
-    .page-header {
+    .page-header-reg{
         height: 80px;
-        margin: 5px 0 0 0;
-        padding: 0;
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+
+    }
+
+    .page-header {
+        height: 90px;
+        margin: 0 0 0 0;
+        padding: 10px 0 0 0;
     }
 
     .slog, .citations, .login_box {
         text-align: center;
     }
 
-    .ef{
+    .ef, .entrance {
         height: 25px;
-        padding: 1px 7px;
-        font-size: 13px;
+        padding: 0 5px 0;
+        font-size: 9pt;
     }
 
     .offer, .register, .read-data{
