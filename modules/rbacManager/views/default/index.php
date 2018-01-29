@@ -63,6 +63,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     $rows = '';
                     $buttonName = 'Действие';
                     $typeColor = 'primary';
+                    $url = "rbacManager/auth-item/view";
 
                     $span = Html::tag('span', count($data->children), ['class' => 'textCaret', 'style' => 'color: white;']);;
                     $span .= Html::tag('span', '', ['class' => 'caret', 'style' => 'color: white;']);
@@ -79,7 +80,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     /** @var \app\modules\rbacManager\models\AuthItemSearch $children */
                     foreach ($data->children as $children){
                         $name = $children->rule_name ?: ($children->description ?: $children->name);
-                        $rows .= Html::tag('li', Html::a($name, "/rbacManager/default/view/$children->name"));
+                        $rows .= Html::tag('li', Html::a($name, "/$url/$children->name"));
                     }
 
                     $content .= Html::tag('ul', $rows, ['class' => 'dropdown-menu', 'role' => 'menu']);

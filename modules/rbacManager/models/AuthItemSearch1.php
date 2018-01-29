@@ -5,10 +5,10 @@ namespace app\modules\rbacManager\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\modules\rbacManager\models\AuthItem;
+use app\models\Mission;
 
 /**
- * AuthItemSearch represents the model behind the search form of `app\modules\rbacManager\models\AuthItem`.
+ * MissionSearch represents the model behind the search form of `app\modules\rbacMenegar\models\AuthItem`.
  */
 class AuthItemSearch extends AuthItem
 {
@@ -18,8 +18,8 @@ class AuthItemSearch extends AuthItem
     public function rules()
     {
         return [
-            [['name', 'description', 'rule_name', 'data'], 'safe'],
-            [['type', 'created_at', 'updated_at'], 'integer'],
+            [['name', 'description'], 'string'],
+            [['name', 'description'], 'safe'],
         ];
     }
 
@@ -61,15 +61,12 @@ class AuthItemSearch extends AuthItem
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'type' => $this->type,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'name' => $this->name,
+            'description' => $this->description,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'description', $this->description])
-            ->andFilterWhere(['like', 'rule_name', $this->rule_name])
-            ->andFilterWhere(['like', 'data', $this->data]);
+            ->andFilterWhere(['like', 'description', $this->description]);
 
         return $dataProvider;
     }

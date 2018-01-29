@@ -36,6 +36,9 @@ $config = [
 //                'category/index' => 'category/index',
 //                'site' => 'category/index',
 //                'site/index' => 'category/index',
+
+                'rbacManager/auth-item/view/<name:\w+>' => 'rbacManager/auth-item/view',
+
                 'site/a-instructions/<id:\d+>' => 'site/a-instructions',
                 //'rbacMenegar/create' => 'rbacMenegar/create',
 
@@ -48,7 +51,9 @@ $config = [
                 'category/run-my-modal/<is:\d+>' => 'category/run-my-modal',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
 
-                '<module:\w+>/<controller:\w+>/<action:\w+>/<name:\w+>' => '<module>/<controller>/<action>',
+                '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
+                //'<module:\w+>/<controller:\w+>/<action:\w+>/<name:\w+>' => '<module>/<controller>/<action>',
+
             ],
         ],
         'user' => [
