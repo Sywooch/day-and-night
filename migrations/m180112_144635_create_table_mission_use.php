@@ -24,7 +24,7 @@ class m180112_144635_create_table_mission_use extends Migration
         $this->createIndex('id_mission', 'mission_use', 'id_author');
         $this->createIndex('id_article', 'mission_use', 'id_author');
 
-        $this->alterColumn('query_work', 'id', 'int(10) unsigned NOT NULL AUTO_INCREMENT');
+        $this->alterColumn('mission_use', 'id', 'int(10) unsigned NOT NULL AUTO_INCREMENT');
 
         $this->addForeignKey('mission_use_ibfk_1', 'mission_use', 'id_query', 'query', 'id', 'NO ACTION', 'NO ACTION');
         $this->addForeignKey('mission_use_ibfk_2', 'mission_use', 'id_mission', 'mission', 'id', 'NO ACTION', 'NO ACTION');

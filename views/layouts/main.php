@@ -87,6 +87,7 @@ AppAsset::register($this);
     ul.a {
         list-style-type: circle;
 
+
     }
 
     .layerP, .layerK {
@@ -445,7 +446,14 @@ AppAsset::register($this);
         opacity: 1;
     }
 
+    a.category-RBAC {
+        font-size: 9pt;
+    }
 
+    a.category-RBAC:hover {
+        font-size: 12pt;
+        transition: 0.1s;
+    }
 
 
 </style>
