@@ -16,13 +16,13 @@ class m180112_144635_create_table_mission_use extends Migration
           `id` int(10) unsigned NOT NULL,
           `id_query` int(10) unsigned NOT NULL COMMENT 'Запрос',
           `id_mission` int(10) unsigned NOT NULL COMMENT 'Задание',
-          `id_article` int(10) unsigned DEFAULT NULL COMMENT 'Статья',
+          `id_article` int(10) unsigned DEFAULT NULL COMMENT 'Статья'
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT 'Связь между запросом, заданием и статьей';");
 
         $this->addPrimaryKey('', 'mission_use', 'id');
-        $this->createIndex('id_query', 'mission_use', 'id_author');
-        $this->createIndex('id_mission', 'mission_use', 'id_author');
-        $this->createIndex('id_article', 'mission_use', 'id_author');
+        $this->createIndex('id_query', 'mission_use', 'id_query');
+        $this->createIndex('id_mission', 'mission_use', 'id_mission');
+        $this->createIndex('id_article', 'mission_use', 'id_article');
 
         $this->alterColumn('mission_use', 'id', 'int(10) unsigned NOT NULL AUTO_INCREMENT');
 
