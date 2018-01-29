@@ -19,7 +19,8 @@ use yii\bootstrap\ActiveForm;
 </style>
 
 
-<header class="page-header">
+<header class="page-header-reg">
+
     <?php $form = ActiveForm::begin([
         'id' => 'login-form',
         'layout' => 'inline',
@@ -42,13 +43,11 @@ use yii\bootstrap\ActiveForm;
 //            'labelOptions' => ['class' => 'col-lg-1 control-label'],
 //        ],
 //    ]); ?>
-    <div class="row">
-        <div class="col-xs-6">
-            <div class="slog">
-                <p>Web-dn " Постоянная и надежная работа для копирайтеров "</p>
-            </div>
-        </div>
 
+    <div class="col-row">
+        <div class="col-xs-6">
+            <div class="slog"><p>Web-dn "Постоянная и надежная работа для копирайтеров"</p></div>
+        </div>
         <div class="col-xs-6">
             <div class="login_box">
                 <?= $form->field($model, 'email')
@@ -64,8 +63,10 @@ use yii\bootstrap\ActiveForm;
                         'class' => 'ef',
                     ])
                 ?>
-                <?= \yii\bootstrap\Html::submitButton('ВОЙТИ', ['name' => 'login-button',]) ?>
-                <div class="clear"></div>
+                <?= \yii\bootstrap\Html::submitButton('Войти', [
+                    'name' => 'login-button',
+                    'class' => 'entrance',
+                ]) ?>
                 <div class="some">
                     <?= $form->field($model, 'rememberMe')->checkbox([
                         'template' => " {label} {input}  <a href=\"#\">забыли пароль</a>",
@@ -76,9 +77,10 @@ use yii\bootstrap\ActiveForm;
     </div>
 
     <?php ActiveForm::end(); ?>
+
 </header><!-- .header-->
 
-<div class="line"></div>
+
 
 
 
