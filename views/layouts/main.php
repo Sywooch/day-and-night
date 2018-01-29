@@ -396,8 +396,8 @@ AppAsset::register($this);
         position: fixed;
         background: rgb(10, 140, 150);
         border-radius: 20px 0 0 20px;
-        top: 120px;
-        right: -180px;
+        top: 133px;
+        right: -170px;
         transition: 1s;
         height: 135px;
     }
@@ -435,7 +435,7 @@ AppAsset::register($this);
         position: absolute;
         top: 50%;
         margin-top: -58px;
-        left: -36px;
+        left: -50px;
     }
 
     .drop-menu .menu_block.menu-tabs .nav.nav-stacked{
@@ -451,7 +451,7 @@ AppAsset::register($this);
     }
 
     a.category-RBAC:hover {
-        font-size: 12pt;
+        font-size: 14pt;
         transition: 0.1s;
     }
 
