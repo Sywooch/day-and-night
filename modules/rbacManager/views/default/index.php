@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel \app\modules\rbacManager\models\AuthItemSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Менеджер правил';
+$this->title = 'Менеджер прав доступа';
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Создать правило', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-<!--    <!-- Split button -->-->
+<!--    <!-- Split button -->
 <!--    <div class="btn-group">-->
 <!--        <button type="button" class="btn btn-primary">Действие</button>-->
 <!--        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">-->
@@ -46,13 +46,13 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'name',
                 'contentOptions' =>function ($model, $key, $index, $column){
-                    return ['style' => 'width: 150px;text-align: center;',];
+                    return ['style' => 'width: 150px;text-align: center;'];
                 },
             ],
             'description',
             [
                 'attribute' => 'type',
-                'label' => 'В себя включает',
+                'label' => 'В СЕБЯ ВКЛЮЧАЕТ',
                 'value' => function ($data) {
                     return $data->type;
                 },
@@ -61,7 +61,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'content' => function ($data) {
 
                     $rows = '';
-                    $buttonName = 'Действие';
+                    $buttonName = 'Действия';
                     $typeColor = 'primary';
                     $url = "rbacManager/auth-item/view";
 
@@ -80,7 +80,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     /** @var \app\modules\rbacManager\models\AuthItemSearch $children */
                     foreach ($data->children as $children){
                         $name = $children->rule_name ?: ($children->description ?: $children->name);
-                        $rows .= Html::tag('li', Html::a($name, "/$url/$children->name"));
+                        $rows .= Html::tag('li', Html::a($name, "/$url/$children->name", ['class' => 'category-RBAC']));
                     }
 
                     $content .= Html::tag('ul', $rows, ['class' => 'dropdown-menu', 'role' => 'menu']);
