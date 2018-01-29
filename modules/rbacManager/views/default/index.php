@@ -52,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'description',
             [
                 'attribute' => 'type',
-                'label' => 'В СЕБЯ ВКЛЮЧАЕТ',
+                'label' => 'В себя включает',
                 'value' => function ($data) {
                     return $data->type;
                 },
