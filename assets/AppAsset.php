@@ -20,6 +20,8 @@ class AppAsset extends AssetBundle
     public $js = [
         'js/ckeditor/ckeditor.js',
         'js/calendar.js',
+        'js/button.js',
+        'js/dropdown.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
