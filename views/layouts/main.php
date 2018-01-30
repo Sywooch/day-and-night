@@ -68,7 +68,7 @@ AppAsset::register($this);
     }
 
     span {
-        color: rgb(2, 2, 150);
+        color: rgb(0, 0, 36);
         font-family: 'Open Sans', serif;
         font-size: 10pt;
     }
@@ -83,11 +83,23 @@ AppAsset::register($this);
     }
 
 
-
     ul.a {
         list-style-type: circle;
+    }
 
 
+    label, a {
+        color: rgb(0, 0, 36);
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 1px;
+        font-weight: 100;
+        font-size: 10pt;
+    }
+
+    .some label, .some a {
+        font-size: 9pt;
+        color: rgb(11, 69, 78);
     }
 
     .layerP, .layerK {
@@ -106,15 +118,6 @@ AppAsset::register($this);
         height: 200px; /* Высота блока */
         padding: 5px; /* Поля вокруг текста */
         border: solid 1px black; /* Параметры рамки */
-    }
-
-    label, a {
-        color: rgb(2, 2, 150);
-        display: inline-block;
-        max-width: 100%;
-        margin-bottom: 1px;
-        font-weight: 100;
-        font-size: 8pt;
     }
 
 
@@ -137,8 +140,9 @@ AppAsset::register($this);
 
     .ef, .entrance {
         height: 25px;
-        padding: 0 5px 0;
+        padding: 0 3px 0;
         font-size: 9pt;
+        width: 180px;
     }
 
     .offer, .register, .read-data{
@@ -171,7 +175,7 @@ AppAsset::register($this);
     }
 
     .register {
-        width: 172px;
+        width: 180px;
         margin: auto;
         padding: 0;
     }
@@ -239,8 +243,6 @@ AppAsset::register($this);
         background-image: none;
         margin-bottom: 10px;
     }
-
-
 
     .a_edit{
         color: rgba(255, 0, 0, 0.51);
@@ -329,8 +331,6 @@ AppAsset::register($this);
                 0 0 1px rgb(86,96,106);
         pointer-events: none;
     }
-
-
     a.button21 {
         display: inline-block;
         width: 2em;
@@ -397,15 +397,30 @@ AppAsset::register($this);
         background: rgb(10, 140, 150);
         border-radius: 20px 0 0 20px;
         top: 133px;
-        right: -170px;
+        right: -180px;
         transition: 1s;
         height: 135px;
+
     }
 
     .drop-menu:hover{
         right: 0;
         transition: 1.5s;
         height: inherit;
+        width: 300px;
+    }
+
+    .flashing-link li:hover,
+    .flashing-link li:focus {
+        text-decoration: none;
+        background-color: #eee;
+    }
+
+
+
+    .flashing-link li a {
+        font-size: 10pt;
+        color: #020296;
     }
 
     .drop-menu:hover .menu_block.button-M h2{
@@ -421,7 +436,10 @@ AppAsset::register($this);
     .menu-tabs{
         margin-left: 55px;
         color: rgb(234, 252, 255);
+        font-size: 5pt;
     }
+
+
 
     .button-M{
         -moz-transform: rotate(-90deg); /* Для Firefox */
@@ -434,8 +452,8 @@ AppAsset::register($this);
     .menu_block.button-M{
         position: absolute;
         top: 50%;
-        margin-top: -58px;
-        left: -50px;
+        margin-top: -60px;
+        left: -40px;
     }
 
     .drop-menu .menu_block.menu-tabs .nav.nav-stacked{
@@ -444,10 +462,13 @@ AppAsset::register($this);
 
     .drop-menu:hover .menu_block.menu-tabs .nav.nav-stacked {
         opacity: 1;
+
     }
+
 
     a.category-RBAC {
         font-size: 9pt;
+
     }
 
     a.category-RBAC:hover {

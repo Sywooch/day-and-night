@@ -17,43 +17,41 @@ use yii\helpers\Html;
 
                 <li class="nav-divider"></li>
                 <li class="nav-header"><a href="#"><span>Администратор</span></a>
-                    <ul>
-                        <li><?= Html::a('Главная', '/') ?></li>
-                        <li><?= Html::a('Правила', '/manual') ?></li>
-                        <li><?= Html::a('Новости', '/site/a-news') ?></li>
-                        <li><?= Html::a('Контакты', '/site/contact') ?></li>
+                    <ul class="flashing-link flashing-up">
+                        <li> &nbsp; <?= Html::a( 'Главная', '/') ?></li>
+                        <li> &nbsp; <?= Html::a('Правила', '/manual') ?></li>
+                        <li> &nbsp; <?= Html::a('Новости', '/site/a-news') ?></li>
+                        <li> &nbsp; <?= Html::a('Контакты', '/site/contact') ?></li>
 
                         <li class="nav-divider"></li>
-                        <li><?= Html::a('Задачи COP', '/query') ?></li>
-                        <li><?= Html::a('Задачи WEB', '/query-work') ?></li>
+                        <li> &nbsp; <?= Html::a('Задачи COP', '/query') ?></li>
+                        <li> &nbsp; <?= Html::a('Задачи WEB', '/query-work') ?></li>
 
                         <li class="nav-divider"></li>
-                        <li><?= Html::a('Темы', '/topics') ?></li>
-                        <li><?= Html::a('Текущие темы', '/topics-use') ?></li>
-                        <li><?= Html::a('Задания', '/mission') ?></li>
-                        <li><?= Html::a('Пользователи', '/site/a-red') ?></li>
-
+                        <li> &nbsp; <?= Html::a('Темы', '/topics') ?></li>
+                        <li> &nbsp; <?= Html::a('Текущие темы', '/topics-use') ?></li>
+                        <li> &nbsp; <?= Html::a('Задания', '/mission') ?></li>
+                        <li> &nbsp; <?= Html::a('Пользователи', '/site/a-red') ?></li>
                     </ul>
                 </li>
 
-                <li class="nav-divider"></li>
-                <li class="nav-divider"></li>
+
                 <li class="nav-header"><a href="#"><span>Копирайтеры</span></a>
-                    <ul>
-                        <li><?= Html::a('Правила', '/site/a-instructions') ?></li>
-                        <li><?= Html::a('Профиль', '/site/cop-profile') ?></li>
-                        <li><?= Html::a('Получить задание', '/site/cop-get-work') ?></li>
-                        <li><?= Html::a('Текущие задания', '/site/cop-works') ?></li>
-                        <li><?= Html::a('Читать статьи', '/site/a-articles') ?></li>
-                        <li><?= Html::a('Комментарии редактора', '/site/a-comments') ?></li>
+                    <ul class="flashing-link flashing-up">
+                        <li> &nbsp; <?= Html::a('Правила', '/site/a-instructions') ?></li>
+                        <li> &nbsp; <?= Html::a('Профиль', '/site/cop-profile') ?></li>
+                        <li> &nbsp; <?= Html::a('Получить задание', '/site/cop-get-work') ?></li>
+                        <li> &nbsp; <?= Html::a('Текущие задания', '/site/cop-works') ?></li>
+                        <li> &nbsp; <?= Html::a('Читать статьи', '/site/a-articles') ?></li>
+                        <li> &nbsp; <?= Html::a('Комментарии редактора', '/site/a-comments') ?></li>
                         <li class="nav-divider"></li>
-                        <li><?= Html::a('Баланс', '#') ?></li>
-                        <li><?= Html::a('Ставка', '#') ?></li>
-                        <li><?= Html::a('К оплате', '/site/cop-pay') ?></li>
-                        <li><?= Html::a('Новое', '/site/cop-new-work') ?></li>
-                        <li><?= Html::a('В работе', '/site/cop-in-work') ?></li>
-                        <li><?= Html::a('Доработка', '/site/cop-out-work') ?></li>
-                        <li><?= Html::a('Проверка', '#') ?></li>
+                        <li> &nbsp; <?= Html::a('Баланс', '#') ?></li>
+                        <li> &nbsp; <?= Html::a('Ставка', '#') ?></li>
+                        <li> &nbsp; <?= Html::a('К оплате', '/site/cop-pay') ?></li>
+                        <li> &nbsp; <?= Html::a('Новое', '/site/cop-new-work') ?></li>
+                        <li> &nbsp; <?= Html::a('В работе', '/site/cop-in-work') ?></li>
+                        <li> &nbsp; <?= Html::a('Доработка', '/site/cop-out-work') ?></li>
+                        <li> &nbsp; <?= Html::a('Проверка', '#') ?></li>
                     </ul>
                 </li>
 

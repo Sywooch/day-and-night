@@ -69,7 +69,7 @@ use yii\bootstrap\ActiveForm;
                 ]) ?>
                 <div class="some">
                     <?= $form->field($model, 'rememberMe')->checkbox([
-                        'template' => " {label} {input}  <a href=\"#\">забыли пароль</a>",
+                        'template' => " {label} {input} <a href=\"#\">забыли пароль</a>",
                     ]) ?>
                 </div>
             </div>
