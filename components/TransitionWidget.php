@@ -39,6 +39,6 @@ class TransitionWidget extends Widget
 
     public function getViewPath()
     {
-        return parent::getViewPath() . "\\..\\..\\views\\widget\\transition";
+        return parent::getViewPath() . "transition";
     }
 }

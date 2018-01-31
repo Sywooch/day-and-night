@@ -30,6 +30,6 @@ class RegistrationWidget extends Widget
 
     public function getViewPath()
     {
-        return parent::getViewPath() . "\\..\\..\\views\\widget\\registration";
+        return parent::getViewPath() . "registration";
     }
 }

@@ -16,7 +16,7 @@ use yii\helpers\Html;
                 <li class="nav-divider"></li>
 
                 <li class="nav-divider"></li>
-                <li class="nav-header"><a href="#"><span>Администратор</span></a>
+                <li class="nav-header"><a href="#"><h3><span>Администратор</span></h3></a>
                     <ul>
                         <li><?= Html::a('Главная', '/') ?></li>
                         <li><?= Html::a('Правила', '/manual') ?></li>
