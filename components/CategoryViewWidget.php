@@ -32,6 +32,6 @@ class CategoryViewWidget extends Widget
 
     public function getViewPath()
     {
-        return parent::getViewPath() . "\\..\\..\\views\\widget\\category";
+        return parent::getViewPath() . "category";
     }
 }

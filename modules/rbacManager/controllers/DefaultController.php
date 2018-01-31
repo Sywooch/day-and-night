@@ -2,8 +2,11 @@
 
 namespace app\modules\rbacManager\controllers;
 
+use app\modules\rbacManager\models\AuthItem;
 use app\modules\rbacManager\models\AuthItemSearch;
 use Yii;
+use yii\helpers\ArrayHelper;
+use yii\helpers\Html;
 use yii\web\Controller;
 use yii\rbac\DbManager;
 use app\modules\rbacManager\Module;
@@ -51,14 +54,20 @@ class DefaultController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
 
             $newRole = $this->auth->createPermission($model->name);
+            //$newRole->ruleName = $model->rule_name;
             $newRole->description = $model->description;
+
+            $auth = $this->auth;
+
+           // d( $newRole );
+
             $this->auth->add($newRole);
 
             if(($role = $model->parent_name) && $role = $this->auth->getRole($role)){
                 $this->auth->addChild($role, $newRole);
             }
 
-            return $this->redirect(['view', 'id' => $model->name]);
+            return $this->redirect(['/rbacManager/authItem/view', 'name' => $model->name]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -66,17 +75,18 @@ class DefaultController extends Controller
         }
     }
 
-    /**
-     * Displays a single Manual model.
-     * @param string $id
-     * @return mixed
-     */
-    public function actionView($name = '')
+    public function actionOst()
     {
-        $model = new RoleForm();
+        return $this->render('ostrosyuzhetnoe');
+    }
 
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+    public function actionStr()
+    {
+        return $this->render('strashnoe_hd');
+    }
+
+    public function actionST()
+    {
+        return $this->render('tv_3');
     }
 }

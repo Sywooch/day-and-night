@@ -25,6 +25,6 @@ class StatisticsWidget extends Widget
 
     public function getViewPath()
     {
-        return parent::getViewPath() . "\\..\\..\\views\\widget\\statistics";
+        return parent::getViewPath() . "statistics";
     }
 }
