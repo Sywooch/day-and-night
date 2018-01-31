@@ -20,6 +20,6 @@ class MenuWidget extends Widget
 
     public function getViewPath()
     {
-        return parent::getViewPath() . "\\..\\..\\views\\widget\\menu";
+        return parent::getViewPath() . "menu";
     }
 }

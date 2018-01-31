@@ -110,4 +110,14 @@ class AuthItem extends \yii\db\ActiveRecord
     {
         return $this->hasMany(AuthItem::className(), ['name' => 'parent'])->viaTable('auth_item_child', ['child' => 'name']);
     }
+
+    static public function getForDropDownList()
+    {
+        return array_merge(['нет категории'],
+            AuthItem::find()
+                ->addSelect(['name'])
+                ->where((new \yii\db\Expression("type = :type", ['type' => '1'])))
+                ->indexBy('name')
+                ->column());
+    }
 }
