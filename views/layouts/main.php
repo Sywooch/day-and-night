@@ -29,7 +29,7 @@ AppAsset::register($this);
 
 
 <style>
-
+/**/
     body {
         background-color: rgba(132, 236, 255, 0.33);
         font-family: 'Open Sans', serif;
